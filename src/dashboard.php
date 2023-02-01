@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-
-if (isset($_SESSION['logged_in'])) {
-    header:
-    ('Location: ./php-functions/panel.php');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,11 +53,5 @@ if (isset($_SESSION['logged_in'])) {
         </div>
     </div>
 </body>
-
-<form action="./php-functions/validate.php" method="post" enctype="multipart/form-data" class="box">
-    <label>Email<br><br> <input class="email-pswd" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required></label><br><br>
-    <label>Password<br><br> <input class="email-pswd" type="password" name="pswd" minlength="8" maxlength="21" required></label><br><br>
-    <button class="log-in" type="submit" style="cursor: pointer;">Log in</button>
-</form>
 
 </html>
