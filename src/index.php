@@ -16,12 +16,12 @@ if (isset($_SESSION['logged_in'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./main.css">
     <link rel="shortcut icon" href="./assets/img/vpn.png" type="image/x-icon">
     <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
     <title>VPN Server</title>
 </head>
-
+  
 <body>
     <div class="row align-items-center text-center">
         <div class="col-md-auto bg-light">

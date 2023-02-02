@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/joejoyjoy/develop-your-project-in-php#readme",
   "dependencies": {
-    "bootstrap": "^5.3.0-alpha1"
+    "bootstrap": "^5.3.0-alpha1",
+    "bootstrap-icons": "^1.10.3"
   }
 }
