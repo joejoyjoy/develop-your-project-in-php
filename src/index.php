@@ -1,14 +1,16 @@
 <?php
 
 session_start();
+error_reporting(0);
 
-if (isset($_SESSION['logged_in'])) {
-    header:
-    ('Location: ./php-functions/panel.php');
-    exit();
+$validar = $_SESSION['nombre'];
+
+if ($validar == null || $validar = '') {
+    header("Location: ./includes/login.php");
+    die();
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,32 +21,51 @@ if (isset($_SESSION['logged_in'])) {
     <link rel="stylesheet" href="./main.css">
     <link rel="shortcut icon" href="./assets/img/vpn.png" type="image/x-icon">
     <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
-    <title>VPN Server</title>
+    <title>Registro | VPN Server</title>
 </head>
-  
+
 <body>
-    <div class="row align-items-center text-center">
-        <div class="col-md-auto bg-light">
-            <form action="./php-functions/validate.php" method="post" enctype="multipart/form-data" class="box">
-                <div class="mb-3">
-                    <label for="loginFormEmail" class="form-label">Email address</label>
-                    <input type="email" name="email" class="email-pswd form-control" id="loginFormEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" required>
+    <form action="./includes/validar.php" method="POST">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <br>
+                        <br>
+                        <h3 class="text-center">Registro de nuevo usuario</h3>
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Correo:</label><br>
+                            <input type="email" name="correo" id="correo" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono" class="form-label">Telefono *</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña:</label><br>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rol" class="form-label">Rol de usuario *</label>
+                            <input type="number" id="rol" name="rol" class="form-control" placeholder="Escribe el rol, 1 admin, 2 lector..">
+                        </div>
+
+                        <br>
+
+                        <div class="mb-3">
+                            <input type="submit" value="Guardar" class="btn btn-success" name="registrar">
+                            <a href="./views/user.php" class="btn btn-danger">Cancelar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="loginFormPassword" class="form-label">Password</label>
-                    <input type="password" name="pswd" class="email-pswd form-control" id="loginFormPassword" minlength="8" maxlength="21" required>
-                </div>
-                <button type="submit" class="log-in btn btn-primary" style="cursor: pointer;">Login</button>
-                <?php
-                if (isset($_GET['err']))
-                    echo "<br>Incorrect credentials. Please <a href='index.php'>try again</a>";
-                ?>
-            </form>
+            </div>
         </div>
-        <div class="col position-relative p-0">
-            <img src="./assets/img/background.png" class="img-fluid" alt="VPN Img">
-        </div>
-    </div>
+    </form>
 </body>
 
 </html>

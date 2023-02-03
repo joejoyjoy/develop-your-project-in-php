@@ -3,9 +3,9 @@
 session_start();
 error_reporting(0);
 
-$validar = $_SESSION['nombre'];
+$validate = $_SESSION['nombre'];
 
-if ($validar == null || $validar = '') {
+if ($validate == null || $validate = '') {
     header("Location: ./includes/login.php");
     die();
 }
@@ -24,7 +24,7 @@ if ($validar == null || $validar = '') {
 </head>
 
 <body>
-    <form action="./includes/validar.php" method="POST">
+    <form action="./includes/validate.php" method="POST">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
