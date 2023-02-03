@@ -1,34 +1,42 @@
 <?php
 session_start();
 if (!isset($_SESSION["email"])) {
-    header("Location: index.php");
+    header("Location: login.php");
 }
 ?>
+<?php include('bootstrap.php');?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN server</title>
-</head>
 
 <body>
-    <div class="nav-bar">
-    <nav style="border: 3px solid #130f40; border-radius: 5px; background-color: #30336b; width: 10%; text-align: center;">
-        <a style="color: #eccc68; font-size: 200%;">LogUs in!</a>
-        <ul style="padding-left: 0;">
-            <li style="list-style: none;">
-                <a href="close_session.php" class="sign-out" style="font-size: 250%; border: 1px solid #eccc68; border-radius: 5px; background-color: #eccc68;">Sign out</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="close_session.php" class="navbar-brand">Log out</a>
+        </div>
     </nav>
-    </div>
-    <div>
-        <h1 style="color: #130f40; font-size: 500%; border: 3px solid #130f40; border-radius: 5px; background-color: #f0932b; width: 30%; text-align: center;">You have successfully logged in!</h1>
+
+    <br><br>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h1>VPN information panel</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" name="vpn_country" class="form-control" placeholder="Country" autofocus required><br>
+                                <input type="text" name="vpn_city" class="form-control" placeholder="City" autofocus required><br>
+                                <input type="text" name="vpn_ip_address" class="form-control" placeholder="IP address" autofocus required><br>
+                                <input type="text" name="vpn_ip_route" class="form-control" placeholder="IP route" autofocus required><br>
+                                <input type="text" name="vpn_isp" class="form-control" placeholder="ISP" autofocus required><br>
+                            </div>
+                            <input type="submit" class="btn btn-success btn-block" name="save_task" value="Save VPN data">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
-
-</html>

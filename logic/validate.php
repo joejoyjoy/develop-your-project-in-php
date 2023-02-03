@@ -14,6 +14,6 @@ if ($email === $emailCorrecto && $password === $pswdCorrecta) {
     $_SESSION['email'] = $_REQUEST["email"];
     header("Location: panel.php");
 } else {
-    header("Location: index.php?err=error");
+    header("Location: login.php?err=error");
 }
 ?>

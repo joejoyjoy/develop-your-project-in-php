@@ -6,5 +6,5 @@ unset($_SESSION['username']);
 
 unset($_COOKIE['sessionOver']); 
 setcookie('sessionOver', null, time()-2480, '/'); 
-header('location: index.php');
+header('location: login.php');
 ?>
