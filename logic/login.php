@@ -38,8 +38,8 @@ if (isset($_SESSION['logged-in'])) {
                                         <!-- END -->
                                         <!-- LOG IN -->
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                                type="submit">Log in</button>
+                                            <button class="btn btn-success btn-block fa-lg" type="submit">Log
+                                                in</button><br>
                                             <?php
                 if (isset($_GET['err']))
                     echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";
@@ -57,7 +57,7 @@ if (isset($_SESSION['logged-in'])) {
                                 </div>
                             </div>
                             <!-- RIGHT PART -->
-                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2 back">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4"></h4>
                                     <p class="small mb-0"></p>
@@ -70,6 +70,7 @@ if (isset($_SESSION['logged-in'])) {
             </div>
         </div>
     </section>
+
 
 
 
