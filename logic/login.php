@@ -8,27 +8,69 @@ if (isset($_SESSION['logged-in'])) {
 
 
 <body>
-    <div class="row align-items-center text-center">
-        <div class="col-md-auto bg-light">
-            <form action="validate.php" method="post" enctype="multipart/form-data" class="box">
-                <div class="mb-3">
-                    <label class="form-label">Email<br><br> <input type="email" name="email"
-                            class="email-pswd form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                            aria-describedby="emailHelp" required></label><br><br>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Password<br><br> <input type="password" name="pswd"
-                            class="email-pswd form-control" minlength="1" maxlength="21" required></label><br><br>
-                </div>
-                <button type="submit" class="log-in btn btn-primary" style="cursor: pointer;">Log in</button><br>
-                <?php
+    <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-100">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-10">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-8 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="../assets/vpn-logo.png" style="width: 15%;"
+                                            alt="Hopper VPN logo"><br><br>
+                                        <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
+                                    </div>
+                                    <form action="validate.php" method="post" enctype="multipart/form-data" class="box">
+                                        <!-- EMAIL -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" name="email" id="form2Example11" class="form-control"
+                                                placeholder="Email address"
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                                aria-describedby="emailHelp" required><br><br>
+                                        </div>
+                                        <!-- END -->
+                                        <!-- PASSWORD -->
+                                        <div class="form-outline mb-4">
+                                            <input type="password" name="pswd" class="form-control" minlength="1"
+                                                maxlength="21" required placeholder="Password">
+                                        </div>
+                                        <!-- END -->
+                                        <!-- LOG IN -->
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                                type="submit">Log in</button>
+                                            <?php
                 if (isset($_GET['err']))
-                    echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a>";
-                ?>
-            </form>
+                    echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";
+                                            ?><br><br>
+                                            <a class="text-muted" href="#!">Forgot password?</a>
+                                        </div>
+                                        <!-- END -->
+                                        <!-- CREATE ACCOUNT -->
+                                        <div class="d-flex align-items-center justify-content-center pb-5">
+                                            <p class="mb-0 me-2">Don't have an account?</p>
+                                            <button type="button" class="btn btn-outline-danger">Create new</button>
+                                        </div>
+                                        <!-- END -->
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- RIGHT PART -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4"></h4>
+                                    <p class="small mb-0"></p>
+                                </div>
+                            </div>
+                            <!-- END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col position-relative p-0">
-            <img src="./assets/img/background.png" class="img-fluid" alt="VPN Img">
-        </div>
-    </div>
+    </section>
+
+
+
 </body>
