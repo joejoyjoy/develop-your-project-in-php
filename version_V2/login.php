@@ -18,7 +18,7 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-100">
                     <div class="card rounded-3 text-black">
-                        <div class="row g-10">
+                        <div class="row g-10 align-items-center">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
                                     <div class="text-center">
@@ -28,11 +28,11 @@
                                     <form action="_functions.php" method="POST">
                                         <div class="container">
                                             <div class="row justify-content-center align-items-center">
-                                                <div class="col-md-6">
+                                                <div class="col-md-8">
                                                     <div class="col-md-12">
                                                         <div class="form-outline mb-4">
                                                             <label for="correo">User name:</label><br>
-                                                            <input type="text" name="name" id="name" class="form-control" aria-describedby="emailHelp" required><br><br>
+                                                            <input type="text" name="name" id="name" class="form-control" aria-describedby="emailHelp" required>
                                                         </div>
                                                         <div class="form-outline mb-4">
                                                             <label for="password">Password:</label><br>
@@ -47,6 +47,12 @@
                                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                                 </div>
                                                             <?php unset($_GET['err']); header('refresh: 5; url=login.php');} ?>
+                                                            <?php if(isset($_GET['message'])) { ?>
+                                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                                    <strong>Notification</strong><br> You successfully logged out!
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php unset($_GET['message']); header('refresh: 5; url=login.php');} ?>
                                                             <a class="text-muted" href="#!">Forgot password?</a>
                                                         </div>
                                                         <div class="d-flex align-items-center justify-content-center pb-5">
