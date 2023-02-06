@@ -36,7 +36,7 @@ function access()
     } else if ($rows['users_rule'] == 2) { //lector
         header('Location: reader.php');
     } else {
-        header('Location: login.php');
+        header('Location: login.php?err=wrong');
         session_destroy();
     }
 }

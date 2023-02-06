@@ -13,38 +13,64 @@
 </head>
 
 <body>
-    <form action="_functions.php" method="POST">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-6">
-                    <div class="col-md-12">
-                        <br>
-                        <h1 class="m-4">Globe Icon:
-                            <i class="bi-globe"></i>
-                        </h1>
-                        <br>
-                        <h3 class="text-center">Login</h3>
-                        <br>
-                        <div class="form-group">
-                            <label for="correo">User name:</label><br>
-                            <input type="text" name="name" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required>
-                            <input type="hidden" name="action" value="access">
-                        </div>
-                        <div class="form-group">
-                            <br>
-                            <center>
-                                <input type="submit" class="btn btn-success" value="Login">
-                            </center>
+    <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-100">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-10">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-8 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="./assets/vpn-logo.png" style="width: 15%;" alt="Hopper VPN logo"><br><br>
+                                        <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
+                                    </div>
+                                    <form action="_functions.php" method="POST">
+                                        <div class="container">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-6">
+                                                    <div class="col-md-12">
+                                                        <div class="form-outline mb-4">
+                                                            <label for="correo">User name:</label><br>
+                                                            <input type="text" name="name" id="name" class="form-control" aria-describedby="emailHelp" required><br><br>
+                                                        </div>
+                                                        <div class="form-outline mb-4">
+                                                            <label for="password">Password:</label><br>
+                                                            <input type="password" name="password" id="password" class="form-control" minlength="1" maxlength="21" required>
+                                                            <input type="hidden" name="action" value="access">
+                                                        </div>
+                                                        <div class="text-center pt-1 mb-5 pb-1">
+                                                            <button class="btn btn-success btn-block fa-lg" type="submit">Login</button><br><br>
+                                                            <?php if(isset($_GET['err'])) { ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <strong>A Error has occurred</strong><br> Incorrect credentials. Please try again
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php unset($_GET['err']); header('refresh: 5; url=login.php');} ?>
+                                                            <a class="text-muted" href="#!">Forgot password?</a>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-center pb-5">
+                                                            <p class="mb-0 me-2">Don't have an account?</p>
+                                                            <button type="button" class="btn btn-outline-danger">Create new</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- RIGHT PART -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2 back">
+                                <img src="./assets/coding.jpeg" style="width: 100%;"><br><br>
+                            </div>
+                            <!-- END -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+    </section>
 </body>
 
 </html>
