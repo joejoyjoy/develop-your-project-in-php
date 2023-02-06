@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['name'])) {
+    header("Location: reader.php");
+    die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
