@@ -1,8 +1,8 @@
 <?php 
     include 'model.php';
     $model = new Model();
-    $id = $_REQUEST['id'];
-    $delete = $model->delete($id);
+    $vpn_id = $_REQUEST['vpn_id'];
+    $delete = $model->delete($vpn_id);
  
     if ($delete) {
         echo "<script>alert('delete successfully');</script>";

@@ -4,7 +4,7 @@
         private $server = "localhost";
         private $username = "root";
         private $password;
-        private $db = "testingdb";
+        private $db = "VPN";
         private $conn;
  
         public function __construct(){
@@ -19,15 +19,16 @@
         public function insert(){
  
             if (isset($_POST['submit'])) {
-                if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['mobile']) && isset($_POST['address'])) {
-                    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['mobile']) && !empty($_POST['address']) ) {
+                if (isset($_POST['vpn_country']) && isset($_POST['vpn_city']) && isset($_POST['vpn_ip_address']) && isset($_POST['vpn_ip_route']) && isset($_POST['vpn_isp'])) {
+                    if (!empty($_POST['vpn_country']) && !empty($_POST['vpn_city']) && !empty($_POST['vpn_ip_address']) && !empty($_POST['vpn_ip_route']) && !empty($_POST['vpn_isp'])) {
                          
-                        $name = $_POST['name'];
-                        $mobile = $_POST['mobile'];
-                        $email = $_POST['email'];
-                        $address = $_POST['address'];
+                        $vpn_country = $_POST['vpn_country'];
+                        $vpn_city = $_POST['vpn_city'];
+                        $vpn_ip_address = $_POST['vpn_ip_address'];
+                        $vpn_ip_route = $_POST['vpn_ip_route'];
+                        $vpn_isp = $_POST['vpn_isp'];
  
-                        $query = "INSERT INTO user_tbl (name,email,mobile,address) VALUES ('$name','$email','$mobile','$address')";
+                        $query = "INSERT INTO VPN (vpn_country,vpn_city,vpn_ip_address,vpn_ip_route,vpn_isp) VALUES ('$vpn_country','$vpn_city','$vpn_ip_address','$vpn_ip_route','$vpn_isp')";
                         if ($sql = $this->conn->query($query)) {
                             echo "<script>alert('records added successfully');</script>";
                             echo "<script>window.location.href = 'index.php';</script>";
@@ -47,7 +48,7 @@
         public function fetch(){
             $data = null;
  
-            $query = "SELECT * FROM user_tbl";
+            $query = "SELECT * FROM VPN";
             if ($sql = $this->conn->query($query)) {
                 while ($row = mysqli_fetch_assoc($sql)) {
                     $data[] = $row;
@@ -56,9 +57,9 @@
             return $data;
         }
  
-        public function delete($id){
+        public function delete($vpn_id){
  
-            $query = "DELETE FROM user_tbl where id = '$id'";
+            $query = "DELETE FROM VPN where vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 return true;
             }else{
@@ -66,11 +67,11 @@
             }
         }
  
-        public function fetch_single($id){
+        public function fetch_single($vpn_id){
  
             $data = null;
  
-            $query = "SELECT * FROM user_tbl WHERE id = '$id'";
+            $query = "SELECT * FROM VPN WHERE vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 while ($row = $sql->fetch_assoc()) {
                     $data = $row;
@@ -79,11 +80,11 @@
             return $data;
         }
  
-        public function edit($id){
+        public function edit($vpn_id){
  
             $data = null;
  
-            $query = "SELECT * FROM user_tbl WHERE id = '$id'";
+            $query = "SELECT * FROM VPN WHERE vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 while($row = $sql->fetch_assoc()){
                     $data = $row;
@@ -94,7 +95,7 @@
  
         public function update($data){
  
-            $query = "UPDATE user_tbl SET name='$data[name]', email='$data[email]', mobile='$data[mobile]', address='$data[address]' WHERE id='$data[id] '";
+            $query = "UPDATE VPN SET vpn_country='$data[vpn_country]', vpn_city='$data[vpn_city]', vpn_ip_address='$data[vpn_ip_address]', vpn_ip_route='$data[vpn_ip_route]', vpn_isp='$data[vpn_isp]' WHERE vpn_id='$data[vpn_id] '";
  
             if ($sql = $this->conn->query($query)) {
                 return true;
