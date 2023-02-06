@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/main.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="../src/assets/img/vpn.png" type="image/x-icon">
+    <script src="./script.js"></script>
+    <script src="../src/assets/js/bootstrap.bundle.min.js" defer></script>
+    <title>Connect button | VPN Server</title>
+</head>
+
+<body>
+    <article class="container">
+        <!-- <div class="bg-primary text-white">
+            <video width="320" height="240" autoplay loop muted>
+                <source src="./assets/indexAssets/RocketFade.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <video width="80" height="80" autoplay loop muted>
+                <source src="./assets/indexAssets/connected.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <video width="80" height="80" autoplay loop muted>
+                <source src="./assets/indexAssets/connecting.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <video width="80" height="80" autoplay loop muted>
+                <source src="./assets/indexAssets/off.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div> -->
+        <div>
+            <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
+            </div>
+            <div class="d-flex justify-content-center" id="vpn-connect">
+                <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
+                    <source src="./assets/indexAssets/off.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-secondary" id="vpn-connected-message">Connect to VPN</p>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
