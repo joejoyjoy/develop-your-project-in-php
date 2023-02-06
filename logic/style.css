@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-outline-primary {
+    background: #fff !important;
+    border: 1px solid #FF7538 !important;
+    color: #FF7538 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #FF7538 !important;
+    border: #FF7538 !important;
+    color: #fff !important;
+}
+
 .gradient-custom-2 {
     /* fallback for old browsers */
     background: #fccb90;
@@ -7,8 +25,7 @@
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: url(../assets/coding.jpeg);
-    max-width: 100%;
-    height: auto;
+    background-size: cover;
     }
     
     @media (min-width: 768px) {

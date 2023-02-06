@@ -1,13 +1,24 @@
-<?php include('bootstrap.php'); ?>
+<?php 
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("Location: login.php");
+    }
+
+include('bootstrap.php');
+?>
 
 <body>
+<nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+        <a href="index.php"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
+            <img src="../assets/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5">
-                <h1 class="text-center">VPN Server</h1>
-                <hr style="height: 1px;color: black;background-color: black;">
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-5 mx-auto">
                 <?php
@@ -37,10 +48,12 @@
                         <input type="text" name="vpn_isp" class="form-control" autofocus>
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="submit" class="btn btn-primary">Save VPN data</button>
+                        <button type="submit" name="submit" class="btn btn-primary" style='background-color:#FF7538; border: #FF7538;'>Save VPN data</button>
                     </div>
                 </form>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 </body>

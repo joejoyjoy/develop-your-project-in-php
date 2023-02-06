@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["email"])) {
+if (!isset($_SESSION['email'])) {
     header("Location: login.php");
 }
     include('bootstrap.php');
@@ -9,7 +9,9 @@ if (!isset($_SESSION["email"])) {
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="close_session.php" class="navbar-brand">Log out</a>
+            <a href="close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
+            <img src="../assets/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
     </nav>
 
@@ -18,12 +20,8 @@ if (!isset($_SESSION["email"])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5">
-                <h1 class="text-center">VPN Server</h1>
-                <hr style="height: 1px;color: black;background-color: black;">
-            </div>
-        </div>
         <div class="row">
-            <div class="col-md-12"><a href="add.php" class="btn btn-primary">Add new VPN configuration</a>
+            <div class="col-md-12"><a href="add.php" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Add VPN configuration</a><br><br><br><br>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -33,6 +31,7 @@ if (!isset($_SESSION["email"])) {
                             <th>IP Address</th>
                             <th>IP Route</th>
                             <th>ISP</th>
+                            <th>Created</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,21 +41,21 @@ if (!isset($_SESSION["email"])) {
                 include 'model.php';
                 $model = new Model();
                 $rows = $model->fetch();
-                $i = 1;
                 if(!empty($rows)){
                   foreach($rows as $row){ 
               ?>
                         <tr>
-                            <td><?php echo $i++; ?></td>
+                            <td><?php echo $row['vpn_id']; ?></td>
                             <td><?php echo $row['vpn_country']; ?></td>
                             <td><?php echo $row['vpn_city']; ?></td>
                             <td><?php echo $row['vpn_ip_address']; ?></td>
                             <td><?php echo $row['vpn_ip_route']; ?></td>
                             <td><?php echo $row['vpn_isp']; ?></td>
+                            <td><?php echo $row['created_at']; ?></td>
                             <td>
-                                <a href="read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="badge badge-info">Read</a>
-                                <a href="delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="badge badge-danger">Delete</a>
-                                <a href="edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="badge badge-success">Edit</a>
+                                <a href="read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">Read</a>
+                                <a href="delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning">Edit</a>
                             </td>
                         </tr>
 
@@ -69,6 +68,8 @@ if (!isset($_SESSION["email"])) {
                     </tbody>
                 </table>
             </div>
+            </div>
+        </div>
         </div>
     </div>
 </body>

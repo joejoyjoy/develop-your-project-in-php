@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION['logged-in'])) {
+if (isset($_SESSION['email'])) {
     header('Location: index.php');
-    exit();
+    die();
 }
+
 include('bootstrap.php'); ?>
 
 <body>
@@ -37,8 +38,7 @@ include('bootstrap.php'); ?>
                                         <!-- END -->
                                         <!-- LOG IN -->
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-success btn-block fa-lg" type="submit">Log
-                                                in</button><br>
+                                            <button class="btn btn-outline-primary" type="submit">LOG IN</button><br>
                                             <?php
                 if (isset($_GET['err']))
                     echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";

@@ -1,19 +1,24 @@
-<?php include('bootstrap.php'); ?>
+<?php
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("Location: login.php");
+    }
+
+include('bootstrap.php');
+?>
 
 <body>
 <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="index.php" class="navbar-brand">Return</a>
+            <a href="index.php"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
+            <img src="../assets/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
     </nav>
 
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-5">
-                <h1 class="text-center">VPN Server</h1>
-                <hr style="height: 1px;color: black;background-color: black;">
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-5 mx-auto">
                 <?php
@@ -36,10 +41,10 @@
                     $update = $model->update($data);
  
                     if($update){
-                      echo "<script>alert('record update successfully');</script>";
+                      echo "<script>alert('Record updated successfully!');</script>";
                       echo "<script>window.location.href = 'index.php';</script>";
                     }else{
-                      echo "<script>alert('record update failed');</script>";
+                      echo "<script>alert('Record update failed!');</script>";
                       echo "<script>window.location.href = 'index.php';</script>";
                     }
  
@@ -75,10 +80,12 @@
                         <input type="text" name="vpn_isp" value="<?php echo $row['vpn_isp']; ?>" class="form-control">
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="update" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="update" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Submit</button>
                     </div>
                 </form>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 </body>

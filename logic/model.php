@@ -1,4 +1,8 @@
-<?php 
+<?php
+    if (!isset($_SESSION['email'])) {
+        header("Location: login.php");
+    }
+
     Class Model{
  
         private $server = "localhost";
