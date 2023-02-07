@@ -38,11 +38,20 @@ include('bootstrap.php'); ?>
                                         <!-- END -->
                                         <!-- LOG IN -->
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-outline-primary" type="submit">LOG IN</button><br>
-                                            <?php
-                if (isset($_GET['err']))
-                    echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";
-                                            ?><br><br>
+                                            <button class="btn btn-outline-primary" type="submit">LOG IN</button><br><br>
+                <?php if(isset($_GET['err'])) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Incorrect credentials. Please <a href="../logic/login.php">try again</a></strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php } ?>
+                <?php if(isset($_GET['message'])) { ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                                    <strong>Notification</strong><br> You successfully logged out!
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php unset($_GET['message']); header('refresh: 5; url=login.php');} ?>
+                    <br><br>
                                             <a class="text-muted" href="#!">Forgot password?</a>
                                         </div>
                                         <!-- END -->
@@ -69,8 +78,5 @@ include('bootstrap.php'); ?>
             </div>
         </div>
     </section>
-
-
-
 
 </body>
