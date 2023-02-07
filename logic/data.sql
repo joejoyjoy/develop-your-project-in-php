@@ -1,6 +1,6 @@
 -- DATABASE
 CREATE DATABASE IF NOT EXISTS vpn;
-DEFAULT CHARACTER SET utf8 COLLATE utf8_;
+
 USE vpn;
 
 -- TABLES
@@ -26,16 +26,3 @@ CREATE TABLE vpn (
 	created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (vpn_id)
 );
-
--- QUERYS
-
-insert into
-    User (user_email, user_pass)
-    values
-        ('igardiet@gmail.com', '123456');
-
-insert into
-    VPN (vpn_country, vpn_city, vpn_ip_address, vpn_ip_route, vpn_isp)
-    values
-        ('China', 'Hong Kong', '185.180.255.98', '183.345.264.35', 'Ahin Kum int provider CHINA E.S'),
-        ('Colombia', 'Cartagena', '123.654.374.82', '275.873.694.09', 'CFibra informatica S.A');
