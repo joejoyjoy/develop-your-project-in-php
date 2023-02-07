@@ -8,11 +8,11 @@ if (isset($_SESSION['email'])) {
 include('bootstrap.php'); ?>
 
 <body>
-    <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
+    <section class="h-100 gradient-form" style="background-color: #fff;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-100">
-                    <div class="card rounded-3 text-black">
+                    <div class="card rounded-3 text-black" style="background-color: #f1f2f6;">
                         <div class="row g-10">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
