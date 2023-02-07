@@ -17,8 +17,9 @@ include('bootstrap.php'); ?>
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
                                     <div class="text-center">
-                                        <img src="../assets/vpn-logo.png" style="width: 15%;"
-                                            alt="Hopper VPN logo"><br><br>
+                                        <a href="login.php"><img src="../assets/vpn-logo.png" style="width: 15%; cursor: pointer;"
+                                            alt="Hopper VPN logo"></a>
+                                    <br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>
                                     <form action="validate.php" method="post" enctype="multipart/form-data" class="box">
@@ -39,26 +40,29 @@ include('bootstrap.php'); ?>
                                         <!-- LOG IN -->
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <button class="btn btn-outline-primary" type="submit">LOG IN</button><br><br>
-                <?php if(isset($_GET['err'])) { ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Incorrect credentials. Please <a href="../logic/login.php">try again</a></strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <?php } ?>
-                <?php if(isset($_GET['message'])) { ?>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                                    <strong>Notification</strong><br> You successfully logged out!
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                                </div>
-                                                            <?php unset($_GET['message']); header('refresh: 5; url=login.php');} ?>
+                                            <?php
+                                            if (isset($_GET['err']))
+                                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                            <strong>Incorrect credentials!</strong> Please try again.
+                                                            <a href="login.php" type="button" class="btn-close" aria-label="Close"></a>
+                                                        </div>';
+                                            ?>
+                    
+                    <?php
+                                            if (isset($_GET['message']))
+                                                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                            <strong>User created successfully.</strong> Please login.
+                                                            <a href="login.php" type="button" class="btn-close" aria-label="Close"></a>
+                                                        </div>';
+                                            ?>
                     <br><br>
-                                            <a class="text-muted" href="#!">Forgot password?</a>
+                                            <a class="text-muted" href="">Forgot password?</a>
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <button type="button" class="btn btn-outline-danger">Create new</button>
+                                            <a href="../logic/createUser.php"><button type="button" class="btn btn-outline-danger">Create new</button></a>
                                         </div>
                                         <!-- END -->
                                     </form>
@@ -80,3 +84,6 @@ include('bootstrap.php'); ?>
     </section>
 
 </body>
+
+
+                                            

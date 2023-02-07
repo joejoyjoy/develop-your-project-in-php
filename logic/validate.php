@@ -3,19 +3,21 @@
 $email = $_REQUEST['email'];
 $password = $_REQUEST['pswd'];
 
-$emailCorrecto = "hopper@gmail.com";
-$pswdCorrecta = password_hash('12345678', PASSWORD_BCRYPT);
+$_SESSION['email'] = $email;
 
-echo "<p>The user email is: $email</p>";
-echo "<p>The user password is: $password</p>";
+$connection = mysqli_connect('localhost', 'root', "", 'VPN');
 
-if ($email === $emailCorrecto && password_verify($password, $pswdCorrecta)) {
+$query = "SELECT * FROM user WHERE user_email = '$email'";
+$result = mysqli_query($connection, $query);
+$rows = mysqli_fetch_array($result);
+
+if ($rows['user_email'] == $email && password_verify($password, $rows['user_pass'])) {
     session_start();
     $_SESSION['email'] = $_REQUEST["email"];
     header("Location: index.php");
 } else {
     header("Location: login.php?err=error");
+    session_destroy();
 }
-
 
 ?>
