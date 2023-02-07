@@ -19,7 +19,6 @@ include('head.php');
 
     <div class="container">
         <div class="row">
-
             <main class="col ps-md-2 pt-2">
                 <table id="table" class="table table-hover">
                     <thead>
@@ -71,30 +70,25 @@ include('head.php');
                             <p><b>IP Route:</b> <?php echo $connectRows['vpn_ip_route']; ?></p>
                             <p><b>ISP:</b> <?php echo $connectRows['vpn_isp']; ?></p>
                             <p><b>Created:</b> <?php echo $connectRows['created_at']; ?></p>
-                            <br>
-                            <h3><b><?php echo $connectRows['vpn_country']; ?> - <?php echo $connectRows['vpn_city']; ?></b></h3>
-
-                            <div>
-                                <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
-                                </div>
-                                <div class="d-flex justify-content-center" id="vpn-connect">
-                                    <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
-                                        <source src="../assets/vpnConnect/off.mp4" type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <p class="text-secondary" id="vpn-connected-message">Connect to VPN</p>
-                                </div>
+                            <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <h3><b><?php echo $connectRows['vpn_country']; ?> - <?php echo $connectRows['vpn_city']; ?></b></h3>
+                            </div>
+                            <div class="d-flex justify-content-center" id="vpn-connect">
+                                <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
+                                    <source src="../assets/vpnConnect/off.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <p class="text-secondary" id="vpn-connected-message">Connect to VPN</p>
                             </div>
                         <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
     </div>
 </body>
 

@@ -5,7 +5,8 @@ USE php_vpn;
 SELECT 'CREATING DATABASE STRUCTURE' as 'INFO';
 
 DROP TABLE IF EXISTS users,
-                     rules;
+                     rules,
+                     VPN;
 
 /*!50503 set default_storage_engine = InnoDB */;
 /*!50503 select CONCAT('storage engine: ', @@default_storage_engine) as INFO */;
