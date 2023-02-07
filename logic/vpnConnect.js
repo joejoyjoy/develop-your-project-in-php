@@ -4,7 +4,7 @@ function vpnConnectOn() {
 
     vpnConnection_connecting.innerHTML = `
     <video width="80" height="80" style="cursor: pointer;" autoplay loop muted>
-        <source src="./assets/indexAssets/connecting.mp4" type="video/mp4" />
+        <source src="../assets/vpnConnect/connecting.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>`;
 
@@ -19,13 +19,13 @@ function vpnConnectOn() {
 
             vpnConnection_connected.innerHTML = `
                 <video width="80" height="80" onclick="vpnConnectOff()" style="cursor: pointer;" autoplay loop muted>
-                    <source src="./assets/indexAssets/connected.mp4" type="video/mp4" />
+                    <source src="../assets/vpnConnect/connected.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>`;
 
             vpnRocket.innerHTML = `
                 <video width="320" height="240" autoplay muted>
-                    <source src="./assets/indexAssets/RocketFade.mp4" type="video/mp4" />
+                    <source src="../assets/vpnConnect/RocketFade.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>`;
 
@@ -41,7 +41,7 @@ function vpnConnectOff() {
 
     vpnConnection_connecting.innerHTML = `
         <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
-            <source src="./assets/indexAssets/off.mp4" type="video/mp4" />
+            <source src="../assets/vpnConnect/off.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>`;
 

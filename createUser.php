@@ -39,11 +39,6 @@
                                 <option value="2">Client</option>
                             </select>
 
-                            <div class="form-group">
-                                <label for="rol" class="form-label">Rol de usuario *</label>
-                                <input type="number" id="rol" name="rol" class="form-control" placeholder="Escribe el rol, 1 admin, 2 lector..">
-                            </div>
-
                             <br>
 
                             <div class="mb-3">
