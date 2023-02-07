@@ -1,21 +1,20 @@
 <?php
-    
-$email = $_REQUEST['email'];
-$password = $_REQUEST['pswd'];
 
-$emailCorrecto = "hopper@gmail.com";
-$pswdCorrecta = password_hash('12345678', PASSWORD_BCRYPT);
+$name = $_POST['email'];
+$password = $_POST['password'];
+session_start();
+$_SESSION['email'] = $name;
 
-echo "<p>The user email is: $email</p>";
-echo "<p>The user password is: $password</p>";
+$connection = mysqli_connect("localhost", "root", "", "php_vpn");
+$consult = "SELECT * FROM users WHERE user_email='$name' AND user_pass='$password'";
+$result = mysqli_query($connection, $consult);
+$rows = mysqli_fetch_array($result);
 
-if ($email === $emailCorrecto && password_verify($password, $pswdCorrecta)) {
-    session_start();
-    $_SESSION['email'] = $_REQUEST["email"];
-    header("Location: index.php");
+if ($rows['users_rule'] == 1) { // Admin
+    header('Location: admin.php');
+} else if ($rows['users_rule'] == 2) { // Client
+    header('Location: index.php');
 } else {
-    header("Location: login.php?err=error");
+    header('Location: login.php?err=error');
+    session_destroy();
 }
-
-
-?>

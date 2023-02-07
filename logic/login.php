@@ -5,7 +5,7 @@ if (isset($_SESSION['email'])) {
     die();
 }
 
-include('bootstrap.php'); ?>
+include('head.php'); ?>
 
 <body>
     <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
@@ -21,18 +21,15 @@ include('bootstrap.php'); ?>
                                             alt="Hopper VPN logo"><br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>
-                                    <form action="validate.php" method="post" enctype="multipart/form-data" class="box">
-                                        <!-- EMAIL -->
+                                    <form action="./validate.php" method="POST" enctype="multipart/form-data" class="box">
+                                        <!-- NAME -->
                                         <div class="form-outline mb-4">
-                                            <input type="email" name="email" class="form-control"
-                                                placeholder="Email address"
-                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                aria-describedby="emailHelp" required><br><br>
+                                            <input type="text" name="email" class="form-control" placeholder="User name" pattern="[A-Za-z0-9]+" required><br><br>
                                         </div>
                                         <!-- END -->
                                         <!-- PASSWORD -->
                                         <div class="form-outline mb-4">
-                                            <input type="password" name="pswd" class="form-control" minlength="1"
+                                            <input type="password" name="password" class="form-control" minlength="1"
                                                 maxlength="21" required placeholder="Password">
                                         </div>
                                         <!-- END -->
@@ -40,16 +37,22 @@ include('bootstrap.php'); ?>
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <button class="btn btn-outline-primary" type="submit">LOG IN</button><br>
                                             <?php
-                if (isset($_GET['err']))
-                    echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";
+                                            if (isset($_GET['err']))
+                                                echo "<br>Incorrect credentials. Please <a href='login.php'>try again</a><br><br>";
+                                            ?>
+                                            <?php
+                                            if (isset($_GET['message']))
+                                                echo "<br>User created successfully. <a href='login.php'>Close</a><br><br>";
                                             ?><br><br>
                                             <a class="text-muted" href="#!">Forgot password?</a>
+                                            <p>Jhon -> 12345 - ADMIN</p>
+                                            <p>Robert -> 12345 - CLIENT</p>
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <button type="button" class="btn btn-outline-danger">Create new</button>
+                                            <a href="../createUser.php" class="btn btn-outline-danger">Create new</a>
                                         </div>
                                         <!-- END -->
                                     </form>
@@ -69,8 +72,5 @@ include('bootstrap.php'); ?>
             </div>
         </div>
     </section>
-
-
-
-
 </body>
+</html>

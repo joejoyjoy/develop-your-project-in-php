@@ -21,7 +21,7 @@ if (!isset($_SESSION['email'])) {
         <div class="row">
             <div class="col-md-12 mt-5">
         <div class="row">
-            <div class="col-md-12"><br><br><br>
+            <div class="col-md-12"><a href="add.php" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Add VPN configuration</a><br><br><br><br>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -32,6 +32,7 @@ if (!isset($_SESSION['email'])) {
                             <th>IP Route</th>
                             <th>ISP</th>
                             <th>Created</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,11 @@ if (!isset($_SESSION['email'])) {
                             <td><?php echo $row['vpn_ip_route']; ?></td>
                             <td><?php echo $row['vpn_isp']; ?></td>
                             <td><?php echo $row['created_at']; ?></td>
+                            <td>
+                                <a href="read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">Read</a>
+                                <a href="delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning">Edit</a>
+                            </td>
                         </tr>
 
                         <?php

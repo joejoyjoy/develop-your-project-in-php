@@ -47,7 +47,7 @@ if ($validate == null || $validate = '') {
                         <th>Country</th>
                         <th>City</th>
                         <th>IP Adress</th>
-                        <th>IP Route</th>
+                        <th>IP ASN</th>
                         <th>ISP</th>
                         <th>VPN Nº</th>
                         <th>Actiones</th>
