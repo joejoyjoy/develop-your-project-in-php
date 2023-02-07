@@ -8,7 +8,7 @@
         private $server = "localhost";
         private $username = "root";
         private $password;
-        private $db = "VPN";
+        private $db = "vpn";
         private $conn;
  
         public function __construct(){
@@ -32,7 +32,7 @@
                         $vpn_ip_route = $_POST['vpn_ip_route'];
                         $vpn_isp = $_POST['vpn_isp'];
  
-                        $query = "INSERT INTO VPN (vpn_country,vpn_city,vpn_ip_address,vpn_ip_route,vpn_isp) VALUES ('$vpn_country','$vpn_city','$vpn_ip_address','$vpn_ip_route','$vpn_isp')";
+                        $query = "INSERT INTO vpn (vpn_country,vpn_city,vpn_ip_address,vpn_ip_route,vpn_isp) VALUES ('$vpn_country','$vpn_city','$vpn_ip_address','$vpn_ip_route','$vpn_isp')";
                         if ($sql = $this->conn->query($query)) {
                             echo "<script>alert('records added successfully');</script>";
                             echo "<script>window.location.href = 'index.php';</script>";
@@ -52,7 +52,7 @@
         public function fetch(){
             $data = null;
  
-            $query = "SELECT * FROM VPN";
+            $query = "SELECT * FROM vpn";
             if ($sql = $this->conn->query($query)) {
                 while ($row = mysqli_fetch_assoc($sql)) {
                     $data[] = $row;
@@ -63,7 +63,7 @@
  
         public function delete($vpn_id){
  
-            $query = "DELETE FROM VPN where vpn_id = '$vpn_id'";
+            $query = "DELETE FROM vpn where vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 return true;
             }else{
@@ -75,7 +75,7 @@
  
             $data = null;
  
-            $query = "SELECT * FROM VPN WHERE vpn_id = '$vpn_id'";
+            $query = "SELECT * FROM vpn WHERE vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 while ($row = $sql->fetch_assoc()) {
                     $data = $row;
@@ -88,7 +88,7 @@
  
             $data = null;
  
-            $query = "SELECT * FROM VPN WHERE vpn_id = '$vpn_id'";
+            $query = "SELECT * FROM vpn WHERE vpn_id = '$vpn_id'";
             if ($sql = $this->conn->query($query)) {
                 while($row = $sql->fetch_assoc()){
                     $data = $row;
@@ -99,7 +99,7 @@
  
         public function update($data){
  
-            $query = "UPDATE VPN SET vpn_country='$data[vpn_country]', vpn_city='$data[vpn_city]', vpn_ip_address='$data[vpn_ip_address]', vpn_ip_route='$data[vpn_ip_route]', vpn_isp='$data[vpn_isp]' WHERE vpn_id='$data[vpn_id] '";
+            $query = "UPDATE vpn SET vpn_country='$data[vpn_country]', vpn_city='$data[vpn_city]', vpn_ip_address='$data[vpn_ip_address]', vpn_ip_route='$data[vpn_ip_route]', vpn_isp='$data[vpn_isp]' WHERE vpn_id='$data[vpn_id] '";
  
             if ($sql = $this->conn->query($query)) {
                 return true;

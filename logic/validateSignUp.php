@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "VPN");
+$connection = mysqli_connect("localhost", "root", "", "vpn");
 
 if (isset($_POST['signup'])) {
     $email = trim($_POST['email']);
@@ -10,7 +10,7 @@ if (isset($_POST['signup'])) {
 
 function mailCheck($email) {
     
-    $connection = mysqli_connect('localhost', 'root', "", 'VPN');
+    $connection = mysqli_connect('localhost', 'root', "", 'vpn');
 
     $query = "SELECT * FROM user WHERE user_email = '$email'";
     $result = mysqli_query($connection, $query);
