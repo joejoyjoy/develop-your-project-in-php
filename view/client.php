@@ -1,15 +1,15 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: ../session/login.php");
+    header("Location:../session/login.php");
 }
-include('../view/head.php');
+include('head.php');
 ?>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="./session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
+            <a href="../session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
             <img src="./assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
             <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
@@ -32,7 +32,7 @@ include('../view/head.php');
                     <tbody>
                         <?php
 
-                        include './config/model.php';
+                        include '../config/model.php';
                         $model = new Model();
                         $rows = $model->fetch();
                         if (!empty($rows)) {
@@ -77,7 +77,7 @@ include('../view/head.php');
                             </div>
                             <div class="d-flex justify-content-center" id="vpn-connect">
                                 <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
-                                    <source src="./assets/vpnConnect/off.mp4" type="video/mp4">
+                                    <source src="../assets/vpnConnect/off.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>

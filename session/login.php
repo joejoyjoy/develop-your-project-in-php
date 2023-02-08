@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-    header('Location: ../login.php');
+    header('Location: ./login.php');
     die();
 }
 
@@ -17,7 +17,7 @@ include('../view/head.php'); ?>
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
                                     <div class="text-center">
-                                        <a href="./login.php"><img src="../assets/images/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
+                                        <a href="login.php"><img src="../assets/images/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
                                         <br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>

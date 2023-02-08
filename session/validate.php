@@ -19,7 +19,7 @@ if ($rows['user_email'] == $email && password_verify($password, $rows['user_pass
     } else if ($rows['user_rule'] == 2) {
         session_start();
         $_SESSION['email'] = $_REQUEST["email"];
-        header("Location: ../client.php");
+        header("Location: ../view/client.php");
     } else {
         header('Location: login.php?err=error');
         session_destroy();
