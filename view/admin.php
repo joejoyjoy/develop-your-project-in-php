@@ -20,7 +20,7 @@ include('../view/head.php');
     <div class="container">
         <a href="../crud/add.php" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Add VPN configuration</a>
         <div class="row mt-3">
-            <main class="col-8 ps-md-2 pt-2">
+            <main class="col-9 ps-md-4 pt-4">
                 <table id="table" class="table table-hover">
                     <thead>
                         <tr>
@@ -46,9 +46,9 @@ include('../view/head.php');
                                     <td><?php echo $row['vpn_ip_address']; ?></td>
                                     <td><?php echo $row['vpn_isp']; ?></td>
                                     <td>
-                                        <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">Read</a>
-                                        <a href="../crud/delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger">Delete</a>
-                                        <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning">Edit</a>
+                                        <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">+</a>
+                                        <a href="../crud/delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                                        <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
 
@@ -61,7 +61,7 @@ include('../view/head.php');
                     </tbody>
                 </table>
             </main>
-            <div class="col-4 px-0">
+            <div class="col-3 px-2">
                 <div id="sidebar" class="container">
                     <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
                         <?php
@@ -83,7 +83,7 @@ include('../view/head.php');
                                 <h3><b><?php echo $rows[$rowArrayCount]['vpn_country']; ?> - <?php echo $rows[$rowArrayCount]['vpn_city']; ?></b></h3>
                             </div>
                             <div class="d-flex justify-content-center" id="vpn-connect">
-                                <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
+                                <video width="80" height="80" onclick="vpnConnectOn()" style="cursor:pointer;" autoplay loop muted>
                                     <source src="../assets/vpnConnect/off.mp4" type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
