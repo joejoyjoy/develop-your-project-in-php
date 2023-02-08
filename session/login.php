@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-    header('Location: validate.php');
+    header('Location: ../login.php');
     die();
 }
 
-include('head.php'); ?>
+include('../view/head.php'); ?>
 
 <body>
     <section class="h-100 gradient-form" style="background-color: #fff;">
@@ -17,7 +17,7 @@ include('head.php'); ?>
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
                                     <div class="text-center">
-                                        <a href="login.php"><img src="../assets/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
+                                        <a href="./login.php"><img src="../assets/images/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
                                         <br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>
@@ -39,17 +39,17 @@ include('head.php'); ?>
                                             if (isset($_GET['err']))
                                                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                             <strong>Incorrect credentials!</strong> Please try again.
-                                                            <a href="login.php" type="button" class="btn-close" aria-label="Close"></a>
+                                                            <a href="./login.php" type="button" class="btn-close" aria-label="Close"></a>
                                                         </div>';
                                             ?>
                                             <?php
                                             if (isset($_GET['message']))
                                                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                             <strong>User created successfully.</strong> Please login.
-                                                            <a href="login.php" type="button" class="btn-close" aria-label="Close"></a>
+                                                            <a href="./login.php" type="button" class="btn-close" aria-label="Close"></a>
                                                         </div>';
                                             ?><br><br>
-                                            <a class="text-muted" href="#!">Forgot password?</a>
+                                            <a class="text-muted" href="./login.php">Forgot password?</a>
                                             <p>jhonsmith@gmail.com - Hola123! - ADMIN</p>
                                             <p>robertsmith@gmail.com - Hola123@ - CLIENT</p>
                                         </div>
@@ -57,7 +57,7 @@ include('head.php'); ?>
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <a href="./createUser.php" class="btn btn-outline-danger">Create new</a>
+                                            <a href="../view/createUser.php" class="btn btn-outline-danger">Create new</a>
                                         </div>
                                         <!-- END -->
                                     </form>

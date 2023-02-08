@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location: ../session/login.php");
 }
 
 
@@ -39,14 +39,14 @@ class Model
                     $query = "INSERT INTO VPN (vpn_country,vpn_city,vpn_ip_address,vpn_ip_route,vpn_isp) VALUES ('$vpn_country','$vpn_city','$vpn_ip_address','$vpn_ip_route','$vpn_isp')";
                     if ($sql = $this->conn->query($query)) {
                         echo "<script>alert('records added successfully');</script>";
-                        echo "<script>window.location.href = 'admin.php';</script>";
+                        echo "<script>window.location.href = '../view/admin.php';</script>";
                     } else {
                         echo "<script>alert('failed');</script>";
-                        echo "<script>window.location.href = 'admin.php';</script>";
+                        echo "<script>window.location.href = '../view/admin.php';</script>";
                     }
                 } else {
                     echo "<script>alert('empty');</script>";
-                    echo "<script>window.location.href = 'admin.php';</script>";
+                    echo "<script>window.location.href = '../view/admin.php';</script>";
                 }
             }
         }

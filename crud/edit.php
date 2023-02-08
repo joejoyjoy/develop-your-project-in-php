@@ -1,17 +1,17 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location: ../session/login.php");
 }
 
-include('head.php');
+include('../view/head.php');
 ?>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="javascript:history.go(-1)"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
-            <img src="../assets/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <a href="../view/admin.php"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
+            <img src="../assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
             <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
     </nav>
@@ -20,7 +20,7 @@ include('head.php');
         <div class="row">
             <div class="col-md-5 mx-auto">
                 <?php
-                include 'model.php';
+                include '../config/model.php';
                 $model = new Model();
                 $vpn_id = $_REQUEST['vpn_id'];
                 $row = $model->edit($vpn_id);
@@ -40,10 +40,10 @@ include('head.php');
 
                             if ($update) {
                                 echo "<script>alert('Record updated successfully!');</script>";
-                                echo "<script>window.location.href = 'admin.php';</script>";
+                                echo "<script>window.location.href = '../view/admin.php';</script>";
                             } else {
                                 echo "<script>alert('Record update failed!');</script>";
-                                echo "<script>window.location.href = 'admin.php';</script>";
+                                echo "<script>window.location.href = '../view/admin.php';</script>";
                             }
                         } else {
                             echo "<script>alert('empty');</script>";

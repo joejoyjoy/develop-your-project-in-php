@@ -37,9 +37,9 @@ function mailCheck($email)
             mysqli_query($connection, $dbAdd);
             mysqli_close($connection);
 
-            header('Location: ./login.php?message=success');
+            header('Location: login.php?message=success');
         }
     } else {
-        header('Location: ./createUser.php?err=error');
+        header('Location: ../view/createUser.php?err=error');
     }
 }

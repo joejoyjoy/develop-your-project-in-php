@@ -15,13 +15,13 @@ if ($rows['user_email'] == $email && password_verify($password, $rows['user_pass
     if ($rows['user_rule'] == 1) {
         session_start();
         $_SESSION['email'] = $_REQUEST["email"];
-        header("Location: admin.php");
+        header("Location: ../view/admin.php");
     } else if ($rows['user_rule'] == 2) {
         session_start();
         $_SESSION['email'] = $_REQUEST["email"];
-        header("Location: index.php");
+        header("Location: ../client.php");
     } else {
-        header('Location: login.php?has-entrado');
+        header('Location: login.php?err=error');
         session_destroy();
     }
     

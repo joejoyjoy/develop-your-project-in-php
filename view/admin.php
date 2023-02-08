@@ -1,25 +1,26 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location: ../session/login.php");
 }
-include('head.php');
+include('../view/head.php');
 ?>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
-            <img src="../assets/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <a href="../session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
+            <img src="../assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
             <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
     </nav>
 
-    <br><br>
+    <br>
 
     <div class="container">
-        <div class="row">
-            <main class="col ps-md-2 pt-2">
+        <a href="../crud/add.php" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Add VPN configuration</a>
+        <div class="row mt-3">
+            <main class="col-8 ps-md-2 pt-2">
                 <table id="table" class="table table-hover">
                     <thead>
                         <tr>
@@ -27,22 +28,28 @@ include('head.php');
                             <th>City</th>
                             <th>IP Address</th>
                             <th>ISP</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
 
-                        include 'model.php';
+                        include '../config/model.php';
                         $model = new Model();
                         $rows = $model->fetch();
                         if (!empty($rows)) {
                             foreach ($rows as $row) {
                         ?>
                                 <tr>
-                                    <td><?php echo $row['vpn_country']; ?></td>
-                                    <td><?php echo $row['vpn_city']; ?></td>
+                                    <td><a onclick="tableRowClicked(<?php echo $row['vpn_id']; ?>)"><?php echo $row['vpn_country']; ?></a></td>
+                                    <td><a onclick="tableRowClicked(<?php echo $row['vpn_id']; ?>)"><?php echo $row['vpn_city']; ?></a></td>
                                     <td><?php echo $row['vpn_ip_address']; ?></td>
                                     <td><?php echo $row['vpn_isp']; ?></td>
+                                    <td>
+                                        <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">Read</a>
+                                        <a href="../crud/delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger">Delete</a>
+                                        <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning">Edit</a>
+                                    </td>
                                 </tr>
 
                         <?php
@@ -60,7 +67,7 @@ include('head.php');
                         <?php
                         @$selected_row = $_COOKIE['selected_row'];
 
-                        if (isset($selected_row)) { 
+                        if (isset($selected_row)) {
                             $rowArrayCount = $selected_row - 1; ?>
                             <h4>VPN Information</h4>
                             <p><b>ID Nº:</b> <?php echo $rows[$rowArrayCount]['vpn_id']; ?></p>

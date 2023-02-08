@@ -1,13 +1,21 @@
-<?php include('head.php'); ?>
+<?php include('../view/head.php'); ?>
 
 <body>
+
+<nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+        <a href="./client.php"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
+            <img src="../assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <h1 class="text-center" style='color:#FF7538'>Sign up</h1>
+        </div>
+    </nav>
+
     <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-100">
                     <div class="card rounded-3 text-black container">
-                        <h3 class="text-center">Sign Up</h3>
-                        <form action="./validatSignUp.php" method="POST" enctype="multipart/form-data" class="box">
+                        <form action="../session/validatSignUp.php" method="POST" enctype="multipart/form-data" class="box">
                             <!-- NAME -->
                             <div class="form-outline mb-4"><br>
                                 <label for="name" class="form-label">Name:</label>
@@ -29,7 +37,7 @@
                             if (isset($_GET['err']))
                                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                             <strong>Incorrect credentials!</strong> Please try again.
-                                            <a href="createUser.php" type="button" class="btn-close" aria-label="Close"></a>
+                                            <a href="../view/createUser.php" type="button" class="btn-close" aria-label="Close"></a>
                                         </div>';
                             ?>
                             <!-- END -->
@@ -62,9 +70,10 @@
                             <br>
 
                             <div class="mb-3">
-                                <input type="submit" value="Submit" class="btn btn-success" name="signup" onclick="return Validate()">
-                                <a href="javascript:history.go(-1)" class="btn btn-danger">Cancel</a>
+                                <input type="submit" value="Sign in" style="background-color: #FF7538; border: #FF7538;" class="btn btn-success" name="signup" onclick="return Validate()">
+                                <a href="../session/login.php" class="btn btn-danger" style="background-color: #343A3F; border: #343A3F;">Cancel</a>
                             </div>
+                            
                         </form>
                     </div>
                 </div>
