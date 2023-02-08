@@ -8,27 +8,24 @@ DROP TABLE IF EXISTS users,
                      rules,
                      VPN;
 
-/*!50503 set default_storage_engine = InnoDB */;
-/*!50503 select CONCAT('storage engine: ', @@default_storage_engine) as INFO */;
-
 -- ------------------ --
 -- CREATE TABLE users --
 -- ------------------ --
 CREATE TABLE users (
-    user_id int AUTO_INCREMENT  not null,
-	user_name varchar(50)		not null,
-	user_surname varchar(50)	not null,
-	user_email varchar(50)  	not null,
-	user_phone int(50)  		not null,
-	user_pass varchar(100)  	not null,
-    user_rule 	INT(11) 		not NULL,
-	created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    user_id     INT AUTO_INCREMENT NOT NULL,
+	user_name   VARCHAR(50)		NOT NULL,
+	user_surname VARCHAR(50)	NOT NULL,
+	user_email  VARCHAR(50)  	NOT NULL,
+	user_phone  INT(50)  		NOT NULL,
+	user_pass   VARCHAR(100)  	NOT NULL,
+    user_rule 	INT(11) 		NOT NULL,
+	created_at  timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (user_id)
 );
 -- Insert into TABLE
 INSERT INTO users (user_name, user_surname, user_email, user_phone, user_pass, user_rule) 
-	VALUES ('Jhon', 'Smith', 'jhonsmith@gmail.com', 604978305 ,'Hola123!', 1),
-		('Robert', 'Smith', 'robertsmith@gmail.com', 655978350, 'Hola123@', 2);
+	VALUES ('Jhon', 'Smith', 'jhonsmith@gmail.com', 604978305 ,'$2y$10$JFuupR/vZBQwugUhzZzFTOKZLx4.ufOpONnaPbq2m5O2yWhFHKEVm', 1),
+		('Robert', 'Smith', 'robertsmith@gmail.com', 655978350, '$2y$10$apjtN/2avA9kYnna01HuROQ0g/AxpQZYRjQKR4sHq8.LMEtAQWeb6', 2);
 
 
 
@@ -36,7 +33,7 @@ INSERT INTO users (user_name, user_surname, user_email, user_phone, user_pass, u
 -- CREATE TABLE rules --
 -- ------------------ --
 CREATE TABLE rules (
-    user_id      INT             NOT NULL,
+    user_id     INT             NOT NULL,
     rules       VARCHAR(50)     NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE,
     PRIMARY KEY (user_id, rules)
@@ -52,13 +49,13 @@ INSERT INTO rules (user_id, rules)
 -- CREATE TABLE VPN --
 -- ---------------- --
 CREATE TABLE VPN (
-	vpn_id int AUTO_INCREMENT   not null,
-	vpn_country varchar(15) not null,
-	vpn_city varchar(15)    not null,
-	vpn_ip_address varchar(15)   not null,
-	vpn_ip_route varchar(15) not null,
-	vpn_isp varchar(40) not null,
-    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	vpn_id       INT AUTO_INCREMENT NOT NULL,
+	vpn_country     VARCHAR(15)     NOT NULL,
+	vpn_city        VARCHAR(15)     NOT NULL,
+	vpn_ip_address  VARCHAR(15)     NOT NULL,
+	vpn_ip_route    VARCHAR(15)     NOT NULL,
+	vpn_isp         VARCHAR(40)     NOT NULL,
+    created_at      timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (vpn_id)
 );
 -- Insert into TABLE
@@ -85,4 +82,4 @@ INSERT INTO VPN (vpn_country, vpn_city, vpn_ip_address, vpn_ip_route, vpn_isp)
 -- SELECT LEFT JOIN --
 -- ---------------- --
        
-select u.user_id, u.user_email, u.user_pass, r.rules from users u left join rules r on u.users_rule = r.user_id;
+select u.user_id, u.user_email, u.user_pass, r.rules from users u left join rules r on u.user_rule = r.user_id;
