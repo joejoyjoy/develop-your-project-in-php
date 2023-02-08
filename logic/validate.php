@@ -1,20 +1,32 @@
 <?php
 
-$name = $_POST['email'];
-$password = $_POST['password'];
-session_start();
-$_SESSION['email'] = $name;
+$email = $_REQUEST['email'];
+$password = $_REQUEST['pswd'];
 
-$connection = mysqli_connect("localhost", "root", "", "php_vpn");
-$consult = "SELECT * FROM users WHERE user_email='$name' AND user_pass='$password'";
-$result = mysqli_query($connection, $consult);
+$_SESSION['email'] = $email;
+
+$connection = mysqli_connect('localhost', 'root', "", 'php_vpn');
+
+$query = "SELECT * FROM users WHERE user_email = '$email'";
+$result = mysqli_query($connection, $query);
 $rows = mysqli_fetch_array($result);
 
-if ($rows['users_rule'] == 1) { // Admin
-    header('Location: admin.php');
-} else if ($rows['users_rule'] == 2) { // Client
-    header('Location: index.php');
+if ($rows['user_email'] == $email && password_verify($password, $rows['user_pass'])) {
+    if ($rows['user_rule'] == 1) {
+        session_start();
+        $_SESSION['email'] = $_REQUEST["email"];
+        header("Location: admin.php");
+    } else if ($rows['user_rule'] == 2) {
+        session_start();
+        $_SESSION['email'] = $_REQUEST["email"];
+        header("Location: index.php");
+    } else {
+        header('Location: login.php?has-entrado');
+        session_destroy();
+    }
+    
 } else {
-    header('Location: login.php?err=error');
+    header("Location: login.php?err=error");
     session_destroy();
 }
+

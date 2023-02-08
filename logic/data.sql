@@ -15,19 +15,20 @@ DROP TABLE IF EXISTS users,
 -- CREATE TABLE users --
 -- ------------------ --
 CREATE TABLE users (
-    user_id 	INT 			NOT NULL AUTO_INCREMENT,
-    user_email  VARCHAR(14)     NOT NULL,
-    user_pass  VARCHAR(16)     NOT NULL,
-    users_rule 	INT(11) 		NOT NULL,
-    PRIMARY KEY (user_id)
+    user_id int AUTO_INCREMENT  not null,
+	user_name varchar(50)		not null,
+	user_surname varchar(50)	not null,
+	user_email varchar(50)  	not null,
+	user_phone int(50)  		not null,
+	user_pass varchar(100)  	not null,
+    user_rule 	INT(11) 		not NULL,
+	created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (user_id)
 );
 -- Insert into TABLE
-INSERT INTO users (user_email, user_pass, users_rule) 
-	VALUES ('Jhon', '12345', 1),
-		('Robert', '12345', 2),
-        ('Sarah', '12345', 2),
-        ('Jennifer', '12345678', 1),
-        ('David', '12345', 2);
+INSERT INTO users (user_name, user_surname, user_email, user_phone, user_pass, user_rule) 
+	VALUES ('Jhon', 'Smith', 'jhonsmith@gmail.com', 604978305 ,'Hola123!', 1),
+		('Robert', 'Smith', 'robertsmith@gmail.com', 655978350, 'Hola123@', 2);
 
 
 

@@ -8,27 +8,28 @@ if (isset($_SESSION['email'])) {
 include('head.php'); ?>
 
 <body>
-    <section class="h-100 gradient-form" style="background-color: #f1f2f6;">
+    <section class="h-100 gradient-form" style="background-color: #fff;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-100">
-                    <div class="card rounded-3 text-black">
+                    <div class="card rounded-3 text-black" style="background-color: #f1f2f6;">
                         <div class="row g-10">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
                                     <div class="text-center">
-                                        <img src="../assets/vpn-logo.png" style="width: 15%;" alt="Hopper VPN logo"><br><br>
+                                        <a href="login.php"><img src="../assets/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
+                                        <br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>
-                                    <form action="./validate.php" method="POST" enctype="multipart/form-data" class="box">
-                                        <!-- NAME -->
-                                        <div class="form-outline">
-                                            <input type="text" name="email" class="form-control" placeholder="User name" pattern="[A-Za-z0-9]+" required><br><br>
+                                    <form action="validate.php" method="POST" enctype="multipart/form-data" class="box">
+                                        <!-- EMAIL -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" name="email" class="form-control" placeholder="Email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" required><br><br>
                                         </div>
                                         <!-- END -->
                                         <!-- PASSWORD -->
                                         <div class="form-outline mb-4">
-                                            <input type="password" name="password" class="form-control" minlength="1" maxlength="21" required placeholder="Password">
+                                            <input type="password" name="pswd" class="form-control" minlength="1" maxlength="21" required placeholder="Password">
                                         </div>
                                         <!-- END -->
                                         <!-- LOG IN -->
@@ -49,14 +50,14 @@ include('head.php'); ?>
                                                         </div>';
                                             ?><br><br>
                                             <a class="text-muted" href="#!">Forgot password?</a>
-                                            <p>Jhon -> 12345 - ADMIN</p>
-                                            <p>Robert -> 12345 - CLIENT</p>
+                                            <p>jhonsmith@gmail.com - Hola123! - ADMIN</p>
+                                            <p>robertsmith@gmail.com - Hola123@ - CLIENT</p>
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <a href="../createUser.php" class="btn btn-outline-danger">Create new</a>
+                                            <a href="./createUser.php" class="btn btn-outline-danger">Create new</a>
                                         </div>
                                         <!-- END -->
                                     </form>
