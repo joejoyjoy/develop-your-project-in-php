@@ -11,6 +11,5 @@
  
     if ($delete) {
         echo "<script>alert('Record deleted successfully!');</script>";
-        echo "<script>window.location.href = 'index.php';</script>";
+        echo "<script>window.location.href = 'javascript:history.go(-1)';</script>";
     }
- ?>

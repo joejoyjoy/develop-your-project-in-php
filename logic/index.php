@@ -59,21 +59,21 @@ include('head.php');
                     <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
                         <?php
                         @$selected_row = $_COOKIE['selected_row'];
-                        $connectRows = $model->fetch_single($selected_row);
-                        if (!empty($selected_row && $connectRows)) {
-                        ?>
+
+                        if (isset($selected_row)) { 
+                            $rowArrayCount = $selected_row - 1; ?>
                             <h4>VPN Information</h4>
-                            <p><b>ID Nº:</b> <?php echo $connectRows['vpn_id']; ?></p>
-                            <p><b>Country:</b> <?php echo $connectRows['vpn_country']; ?></p>
-                            <p><b>City:</b> <?php echo $connectRows['vpn_city']; ?></p>
-                            <p><b>IP Address:</b> <?php echo $connectRows['vpn_ip_address']; ?></p>
-                            <p><b>IP Route:</b> <?php echo $connectRows['vpn_ip_route']; ?></p>
-                            <p><b>ISP:</b> <?php echo $connectRows['vpn_isp']; ?></p>
-                            <p><b>Created:</b> <?php echo $connectRows['created_at']; ?></p>
+                            <p><b>ID Nº:</b> <?php echo $rows[$rowArrayCount]['vpn_id']; ?></p>
+                            <p><b>Country:</b> <?php echo $rows[$rowArrayCount]['vpn_country']; ?></p>
+                            <p><b>City:</b> <?php echo $rows[$rowArrayCount]['vpn_city']; ?></p>
+                            <p><b>IP Address:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_address']; ?></p>
+                            <p><b>IP Route:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_route']; ?></p>
+                            <p><b>ISP:</b> <?php echo $rows[$rowArrayCount]['vpn_isp']; ?></p>
+                            <p><b>Created:</b> <?php echo $rows[$rowArrayCount]['created_at']; ?></p>
                             <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <h3><b><?php echo $connectRows['vpn_country']; ?> - <?php echo $connectRows['vpn_city']; ?></b></h3>
+                                <h3><b><?php echo $rows[$rowArrayCount]['vpn_country']; ?> - <?php echo $rows[$rowArrayCount]['vpn_city']; ?></b></h3>
                             </div>
                             <div class="d-flex justify-content-center" id="vpn-connect">
                                 <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>

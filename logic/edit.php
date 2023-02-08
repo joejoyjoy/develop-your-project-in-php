@@ -42,10 +42,10 @@ include('head.php');
 
                                     if ($update) {
                                         echo "<script>alert('Record updated successfully!');</script>";
-                                        echo "<script>window.location.href = 'index.php';</script>";
+                                        echo "<script>window.location.href = 'javascript:history.go(-1)';</script>";
                                     } else {
                                         echo "<script>alert('Record update failed!');</script>";
-                                        echo "<script>window.location.href = 'index.php';</script>";
+                                        echo "<script>window.location.href = 'javascript:history.go(-1)';</script>";
                                     }
                                 } else {
                                     echo "<script>alert('empty');</script>";
