@@ -4,13 +4,6 @@ let rIndex;
 for (let i = 1; i < table.rows.length; i++) {
     table.rows[i].onclick = function () {
         rIndex = this.rowIndex;
-        console.log(rIndex);
-
-        console.log(this.cells[0].innerHTML);
-        console.log(this.cells[1].innerHTML);
-        console.log(this.cells[2].innerHTML);
-        console.log(this.cells[3].innerHTML);
-        console.log(this.cells[4].innerHTML);
 
         document.getElementById("h4").innerText = 'VPN Information';
         document.getElementById("vpn-id-side-info").innerHTML = `<b>ID Nº: </b>` + this.cells[5].innerHTML;

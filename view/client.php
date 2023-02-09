@@ -6,7 +6,7 @@ if (!isset($_SESSION['email'])) {
 include('head.php');
 ?>
 
-<body>
+<body class="bg-light">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <a href="../session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
@@ -43,6 +43,11 @@ include('head.php');
                                     <td><?php echo $row['vpn_city']; ?></td>
                                     <td><?php echo $row['vpn_ip_address']; ?></td>
                                     <td><?php echo $row['vpn_isp']; ?></td>
+                                    <!-- Hide - Used only to get value-->
+                                    <td style="display:none;">action</td>
+                                    <td style="display:none;"><?php echo $row['vpn_id']; ?></td>
+                                    <td style="display:none;"><?php echo $row['vpn_ip_route']; ?></td>
+                                    <td style="display:none;"><?php echo $row['created_at']; ?></td>
                                 </tr>
 
                         <?php
@@ -54,37 +59,21 @@ include('head.php');
                     </tbody>
                 </table>
             </main>
-            <div class="col-4 px-0">
+            <div class="col-4 p-3 bg-white rounded-2">
                 <div id="sidebar" class="container">
                     <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
-                        <?php
-                        @$selected_row = $_COOKIE['selected_row'];
 
-                        if (isset($selected_row)) { 
-                            $rowArrayCount = $selected_row - 1; ?>
-                            <h4>VPN Information</h4>
-                            <p><b>ID Nº:</b> <?php echo $rows[$rowArrayCount]['vpn_id']; ?></p>
-                            <p><b>Country:</b> <?php echo $rows[$rowArrayCount]['vpn_country']; ?></p>
-                            <p><b>City:</b> <?php echo $rows[$rowArrayCount]['vpn_city']; ?></p>
-                            <p><b>IP Address:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_address']; ?></p>
-                            <p><b>IP Route:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_route']; ?></p>
-                            <p><b>ISP:</b> <?php echo $rows[$rowArrayCount]['vpn_isp']; ?></p>
-                            <p><b>Created:</b> <?php echo $rows[$rowArrayCount]['created_at']; ?></p>
-                            <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <h3><b><?php echo $rows[$rowArrayCount]['vpn_country']; ?> - <?php echo $rows[$rowArrayCount]['vpn_city']; ?></b></h3>
-                            </div>
-                            <div class="d-flex justify-content-center" id="vpn-connect">
-                                <video width="80" height="80" onclick="vpnConnectOn()" style="cursor: pointer;" autoplay loop muted>
-                                    <source src="../assets/vpnConnect/off.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <p class="text-secondary" id="vpn-connected-message">Connect to VPN</p>
-                            </div>
-                        <?php } ?>
+                        <h4 id="h4">VPN Information</h4>
+                        <p id="vpn-id-side-info"><b>ID Nº: </b></p>
+                        <p id="vpn-country-side-info"><b>Country: </b></p>
+                        <p id="vpn-city-side-info"><b>City: </b></p>
+                        <p id="vpn-ip-address-side-info"><b>IP Address: </b></p>
+                        <p id="vpn-ip-route-side-info"><b>IP Route: </b></p>
+                        <p id="vpn-isp-side-info"><b>ISP: </b></p>
+                        <p id="vpn-created-side-info"><b>Created: </b></p>
+
+                        <div class="container" id="rocketdiv"></div>
+
                     </div>
                 </div>
             </div>
