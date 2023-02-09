@@ -23,7 +23,7 @@ include('../view/head.php');
             <main class="col-9 ps-md-4 pt-4">
                 <table id="table" class="table table-hover">
                     <thead>
-                        <tr>
+                        <tr style="color: #FF7538;">
                             <th>Country</th>
                             <th>City</th>
                             <th>IP Address</th>
@@ -46,9 +46,9 @@ include('../view/head.php');
                                     <td><?php echo $row['vpn_ip_address']; ?></td>
                                     <td><?php echo $row['vpn_isp']; ?></td>
                                     <td>
-                                        <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">+</a>
-                                        <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteVPN" data-bs-whatever="<?php echo $row['vpn_id']; ?>"><i class="far fa-trash-alt"></i></a>
-                                        <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info"><i class="uil uil-search-alt"></i></a>
+                                        <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteVPN" data-bs-whatever="<?php echo $row['vpn_id']; ?>"><i class="bi bi-trash3" style="color: white;"></i></a>
+                                        <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning" style="color: white;"><i class="fas fa-edit"></i></a>
                                     </td>
                                     <!-- Hide - Used only to get value-->
                                     <td style="display:none;"><?php echo $row['vpn_id']; ?></td>
@@ -59,7 +59,7 @@ include('../view/head.php');
                         <?php
                             }
                         } else {
-                            echo "no data";
+                            echo "No data available";
                         }
                         ?>
                     </tbody>
@@ -128,15 +128,14 @@ include('../view/head.php');
 <!-- Modal delete -->
 <div class="modal fade" id="modalDeleteVPN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" style="border: 3px solid #FF7538;">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a type="button" class="delete-vpn-modal btn btn-primary">Delete</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background: #343A3F; border: none;">Close</button>
+                <a type="button" class="delete-vpn-modal btn btn-primary" style="background: #FF7538; border: none;">Delete</a>
             </div>
         </div>
     </div>
