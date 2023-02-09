@@ -7,8 +7,8 @@ if (isset($_SESSION['email'])) {
 
 include('../view/head.php'); ?>
 
-<body>
-    <section class="h-100 gradient-form" style="background-color: #fff;">
+<body class="vh-100 position-relative">
+    <section class="h-100 vw-100 position-absolute top-50 start-50 translate-middle" style="background-color: #fff;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-100">
@@ -16,14 +16,14 @@ include('../view/head.php'); ?>
                         <div class="row g-10">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-8 mx-md-4">
-                                    <div class="text-center">
+                                    <div class="mt-4 text-center">
                                         <a href="login.php"><img src="../assets/images/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
                                         <br><br>
                                         <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
                                     </div>
                                     <form action="validate.php" method="POST" enctype="multipart/form-data" class="box">
                                         <!-- EMAIL -->
-                                        <div class="form-outline mb-4">
+                                        <div class="form-outline m-0">
                                             <input type="email" name="email" class="form-control" placeholder="Email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" required><br><br>
                                         </div>
                                         <!-- END -->
@@ -51,8 +51,8 @@ include('../view/head.php'); ?>
                                             ?><br>
                                             <!-- <a class="text-muted" href="./login.php">Forgot password?</a><br> -->
                                             <div style="display: flex; justify-content: space-between;">
-                                                <p>johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
-                                                <p>robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
+                                                <p class="p-2">johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
+                                                <p class="p-2">robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
                                             </div>
                                             
                                         </div>
