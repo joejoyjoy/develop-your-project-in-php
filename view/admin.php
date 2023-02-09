@@ -59,7 +59,7 @@ include('../view/head.php');
                         <?php
                             }
                         } else {
-                            echo "no data";
+                            echo "No data available";
                         }
                         ?>
                     </tbody>
@@ -92,15 +92,14 @@ include('../view/head.php');
 <!-- Modal delete -->
 <div class="modal fade" id="modalDeleteVPN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" style="border: 3px solid #FF7538;">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a type="button" class="delete-vpn-modal btn btn-primary">Delete</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background: #343A3F; border: none;">Close</button>
+                <a type="button" class="delete-vpn-modal btn btn-primary" style="background: #FF7538; border: none;">Delete</a>
             </div>
         </div>
     </div>

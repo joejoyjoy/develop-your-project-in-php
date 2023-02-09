@@ -53,7 +53,7 @@ include('head.php');
                         <?php
                             }
                         } else {
-                            echo "no data";
+                            echo "No data available";
                         }
                         ?>
                     </tbody>

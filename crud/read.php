@@ -44,7 +44,7 @@ include('../view/head.php');
                             </div>
                         <?php
                         } else {
-                            echo "no data";
+                            echo "No data available";
                         }
                         ?>
                     </div>
