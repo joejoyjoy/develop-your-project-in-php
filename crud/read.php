@@ -11,7 +11,7 @@ include('../view/head.php');
 
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="../view/admin.php"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
+            <a href="../view/admin.php?event=viewed"><i class='fas fa-arrow-alt-circle-left' style='font-size:48px;color:#FF7538'></i></a>
             <img src="../assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
             <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>

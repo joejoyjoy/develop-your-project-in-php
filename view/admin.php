@@ -85,6 +85,42 @@ include('../view/head.php');
             </div>
         </div>
     </div>
+
+    <?php
+    if (isset($_GET['event'])) { 
+        $var = $_GET['event'] ?>
+        <!-- Toast -->
+        <div class="toast-container bottom-0 start-50 translate-middle-x p-3">
+            <div class="liveToast toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+                <div class="d-flex">
+                    <div class="p-1">
+                        <svg class="bd-placeholder-img rounded me-2" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#FF7538"></rect>
+                        </svg>
+                    </div>
+                    <div class="p-1">
+                        <h3 class="p-0 m-0"><strong class="me-auto">VPN <?php echo $var; ?></strong></h3>
+                    </div>
+
+                    <div class="ms-auto p-1">
+                        <span class="p-1">
+                            <small>Just now</small>
+                        </span>
+                        <span class="p-1">
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="toast-body">
+                    <h6>Given task successfully accomplished!</h6>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
+
 </body>
 
 </html>
@@ -97,7 +133,7 @@ include('../view/head.php');
                 <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <a type="button" class="delete-vpn-modal btn btn-primary">Delete</a>

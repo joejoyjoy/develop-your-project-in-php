@@ -10,5 +10,5 @@
     $delete = $model->delete($vpn_id);
  
     if ($delete) {
-        echo "<script>window.location.href = '../view/admin.php';</script>";
+        echo "<script>window.location.href = '../view/admin.php?event=deleted';</script>";
     }

@@ -38,7 +38,7 @@ class Model
 
                     $query = "INSERT INTO VPN (vpn_country,vpn_city,vpn_ip_address,vpn_ip_route,vpn_isp) VALUES ('$vpn_country','$vpn_city','$vpn_ip_address','$vpn_ip_route','$vpn_isp')";
                     if ($sql = $this->conn->query($query)) {
-                        echo "<script>window.location.href = '../view/admin.php';</script>";
+                        echo "<script>window.location.href = '../view/admin.php?event=added';</script>";
                     } else {
                         echo "<script>window.location.href = '../view/admin.php';</script>";
                     }

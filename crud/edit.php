@@ -39,7 +39,7 @@ include('../view/head.php');
                             $update = $model->update($data);
 
                             if ($update) {
-                                echo "<script>window.location.href = '../view/admin.php';</script>";
+                                echo "<script>window.location.href = '../view/admin.php?event=edited';</script>";
                             } else {
                                 echo "<script>window.location.href = '../view/admin.php';</script>";
                             }
