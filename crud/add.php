@@ -23,7 +23,7 @@ include('../view/head.php');
                 include '../config/model.php';
                 $model = new Model();
                 $insert = $model->insert();
-                ?>
+                ?><br><br><br>
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Country</label>

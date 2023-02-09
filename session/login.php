@@ -19,17 +19,17 @@ include('../view/head.php'); ?>
                                     <div class="mt-4 text-center">
                                         <a href="login.php"><img src="../assets/images/vpn-logo.png" style="width: 15%; cursor: pointer;" alt="Hopper VPN logo"></a>
                                         <br><br>
-                                        <h4 class="mt-1 mb-5 pb-1">Hopper VPN Server</h4>
+                                        <h4 class="mt-1 mb-5 pb-1" style="color: #2D324E;">Hopper VPN Server</h4>
                                     </div>
                                     <form action="validate.php" method="POST" enctype="multipart/form-data" class="box">
                                         <!-- EMAIL -->
                                         <div class="form-outline m-0">
-                                            <input type="email" name="email" class="form-control" placeholder="Email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" required><br><br>
+                                            <input type="email" name="email" class="form-control" placeholder="Email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" required style="border: 1px solid #2D324E;"><br><br>
                                         </div>
                                         <!-- END -->
                                         <!-- PASSWORD -->
                                         <div class="form-outline mb-4">
-                                            <input type="password" name="pswd" class="form-control" minlength="1" maxlength="21" required placeholder="Password">
+                                            <input type="password" name="pswd" class="form-control" minlength="1" maxlength="21" required placeholder="Password" style="border: 1px solid #2D324E;">
                                         </div>
                                         <!-- END -->
                                         <!-- LOG IN -->
@@ -51,15 +51,15 @@ include('../view/head.php'); ?>
                                             ?><br>
                                             <!-- <a class="text-muted" href="./login.php">Forgot password?</a><br> -->
                                             <div style="display: flex; justify-content: space-between;">
-                                                <p class="p-2">johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
-                                                <p class="p-2">robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
+                                                <p class="p-2" style="color: #2D324E;">johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
+                                                <p class="p-2" style="color: #2D324E;">robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
                                             </div>
                                             
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
-                                            <p class="mb-0 me-2">Don't have an account?</p>
+                                            <p class="mb-0 me-2" style="color: #2D324E;">Don't have an account?</p>
                                             <a href="../view/createUser.php" class="btn btn-outline-danger">Register</a>
                                         </div>
                                         <!-- END -->

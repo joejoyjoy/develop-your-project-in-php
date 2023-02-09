@@ -32,7 +32,7 @@ function vpnConnectOn() {
                     Your browser does not support the video tag.
                 </video>`;
 
-    vpnConnectedMessage.innerHTML = "You're connect to the VPN";
+    vpnConnectedMessage.innerHTML = "You're connected to the VPN";
     vpnConnectedMessage.setAttribute("class", "text-success");
   }, 6000);
 }
