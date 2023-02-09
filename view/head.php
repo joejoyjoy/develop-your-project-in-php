@@ -17,6 +17,7 @@
     <script defer src='../logic/vpnPreview.js'></script>
     <script defer src='../logic/vpnConnecting.js'></script>
     <script defer src="../logic/script.js"></script>
+    <script defer src="../logic/modals.js"></script>
 
     <title>VPN server</title>
 </head>

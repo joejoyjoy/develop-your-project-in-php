@@ -47,7 +47,7 @@ include('../view/head.php');
                                     <td><?php echo $row['vpn_isp']; ?></td>
                                     <td>
                                         <a href="../crud/read.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-info">+</a>
-                                        <a href="../crud/delete.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                                        <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteVPN" data-bs-whatever="<?php echo $row['vpn_id']; ?>"><i class="far fa-trash-alt"></i></a>
                                         <a href="../crud/edit.php?vpn_id=<?php echo $row['vpn_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>
                                     <!-- Hide - Used only to get value-->
@@ -88,3 +88,27 @@ include('../view/head.php');
 </body>
 
 </html>
+
+<!-- Modal delete -->
+<div class="modal fade" id="modalDeleteVPN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a type="button" class="delete-vpn-modal btn btn-primary">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

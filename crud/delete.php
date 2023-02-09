@@ -10,6 +10,5 @@
     $delete = $model->delete($vpn_id);
  
     if ($delete) {
-        echo "<script>alert('Record deleted successfully!');</script>";
         echo "<script>window.location.href = '../view/admin.php';</script>";
     }
