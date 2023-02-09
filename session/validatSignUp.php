@@ -20,18 +20,18 @@ function mailCheck($email)
         if (
 
             strlen($_POST['name']) >= 1 && strlen($_POST['surname']) >= 1 && strlen($_POST['email']) >= 1 && strlen($_POST['phone']) >= 1
-            && strlen($_POST['password']) >= 1 && strlen($_POST['rule']) >= 1
+            && strlen($_POST['password']) >= 1 && strlen($_POST['rol']) >= 1
         ) {
             $name = trim($_POST['name']);
             $surname = trim($_POST['surname']);
             $email = trim($_POST['email']);
             $phone = trim($_POST['phone']);
-            $userRule = trim($_POST['rule']);
+            $userRole = trim($_POST['rol']);
 
             $password = password_hash(trim($_POST['password']), PASSWORD_BCRYPT);
 
-            $dbAdd = "INSERT INTO users (user_name, user_surname, user_email, user_phone, user_pass, user_rule)
-            VALUES ('$name', '$surname', '$email', '$phone', '$password', '$userRule')";
+            $dbAdd = "INSERT INTO users (user_name, user_surname, user_email, user_phone, user_pass, user_rol)
+            VALUES ('$name', '$surname', '$email', '$phone', '$password', '$userRole')";
 
 
             mysqli_query($connection, $dbAdd);

@@ -59,14 +59,14 @@
                                 <input type="password" name="password2" id="password2" class="form-control" minlength="8" maxlength="21" required>
                             </div>
                             <!-- END -->
-                            <!-- PASSWORD -->
-                            <label for="rule" class="form-label">Selec user rule *</label>
-                            <select name="rule" id="rule" class="form-select" aria-label="Select user rule" required>
-                                <option selected>Select Rule</option>
+                            <!-- ROLE -->
+                            <label for="rol" class="form-label">Select user role:</label>
+                            <select name="rol" id="rol" class="form-select" aria-label="Select user rol" required>
+                                <option value="">Select Role</option>
                                 <option value="1">Administrator</option>
                                 <option value="2">Client</option>
                             </select>
-
+                            <!-- END -->
                             <br>
 
                             <div class="mb-3">

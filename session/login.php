@@ -34,30 +34,33 @@ include('../view/head.php'); ?>
                                         <!-- END -->
                                         <!-- LOG IN -->
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-outline-primary" type="submit">LOG IN</button><br>
+                                            <button class="btn btn-outline-primary" type="submit">LOG IN</button><br><br>
                                             <?php
                                             if (isset($_GET['err']))
                                                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                            <strong>Incorrect credentials!</strong> Please try again.
+                                                            <strong>Incorrect credentials! Please try again.</strong>
                                                             <a href="./login.php" type="button" class="btn-close" aria-label="Close"></a>
                                                         </div>';
                                             ?>
                                             <?php
                                             if (isset($_GET['message']))
                                                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                            <strong>User created successfully.</strong> Please login.
+                                                            <strong>User created successfully. Please login.</strong>
                                                             <a href="./login.php" type="button" class="btn-close" aria-label="Close"></a>
                                                         </div>';
-                                            ?><br><br>
-                                            <a class="text-muted" href="./login.php">Forgot password?</a>
-                                            <p>jhonsmith@gmail.com - Hola123! - ADMIN</p>
-                                            <p>robertsmith@gmail.com - Hola123@ - CLIENT</p>
+                                            ?><br>
+                                            <!-- <a class="text-muted" href="./login.php">Forgot password?</a><br> -->
+                                            <div style="display: flex; justify-content: space-between;">
+                                                <p>johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
+                                                <p>robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
+                                            </div>
+                                            
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
                                         <div class="d-flex align-items-center justify-content-center pb-5">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <a href="../view/createUser.php" class="btn btn-outline-danger">Create new</a>
+                                            <a href="../view/createUser.php" class="btn btn-outline-danger">Register</a>
                                         </div>
                                         <!-- END -->
                                     </form>

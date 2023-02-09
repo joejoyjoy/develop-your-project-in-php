@@ -12,11 +12,11 @@ $result = mysqli_query($connection, $query);
 $rows = mysqli_fetch_array($result);
 
 if ($rows['user_email'] == $email && password_verify($password, $rows['user_pass'])) {
-    if ($rows['user_rule'] == 1) {
+    if ($rows['user_rol'] == 1) {
         session_start();
         $_SESSION['email'] = $_REQUEST["email"];
         header("Location: ../view/admin.php");
-    } else if ($rows['user_rule'] == 2) {
+    } else if ($rows['user_rol'] == 2) {
         session_start();
         $_SESSION['email'] = $_REQUEST["email"];
         header("Location: ../view/client.php");

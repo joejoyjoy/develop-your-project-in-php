@@ -10,7 +10,7 @@ include('head.php');
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <a href="../session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
-            <img src="./assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
+            <img src="../assets/images/vpn-logo.png" alt="vpn logo" style="height: 8vh;">
             <h1 class="text-center" style='color:#FF7538'>Hopper VPN</h1>
         </div>
     </nav>
