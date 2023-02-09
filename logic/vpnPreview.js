@@ -5,9 +5,17 @@ for (let i = 0; i < table.rows.length; i++) {
         rIndex = this.rowIndex;
         console.log(rIndex);
 
-        let selected_row = rIndex;
-        document.cookie = "selected_row=" + selected_row;
+        let selected_row = rIndex - 1;
 
-        document.location.reload();
+        if (selected_row != -1) {
+            console.log(selected_row);
+            document.cookie = "selected_row=" + selected_row;
+
+            document.location.reload();
+        }
     }
+}
+
+function removeCookie() {
+    document.cookie = "selected_row=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }

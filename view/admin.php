@@ -68,19 +68,19 @@ include('../view/head.php');
                         @$selected_row = $_COOKIE['selected_row'];
 
                         if (isset($selected_row)) {
-                            $rowArrayCount = $selected_row - 1; ?>
+                            $rowArrayCount = $selected_row; ?>
                             <h4>VPN Information</h4>
-                            <p><b>ID Nº:</b> <?php echo $rows[$rowArrayCount]['vpn_id']; ?></p>
-                            <p><b>Country:</b> <?php echo $rows[$rowArrayCount]['vpn_country']; ?></p>
-                            <p><b>City:</b> <?php echo $rows[$rowArrayCount]['vpn_city']; ?></p>
-                            <p><b>IP Address:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_address']; ?></p>
-                            <p><b>IP Route:</b> <?php echo $rows[$rowArrayCount]['vpn_ip_route']; ?></p>
-                            <p><b>ISP:</b> <?php echo $rows[$rowArrayCount]['vpn_isp']; ?></p>
-                            <p><b>Created:</b> <?php echo $rows[$rowArrayCount]['created_at']; ?></p>
+                            <p><b>ID Nº:</b> <?php echo @$rows[$rowArrayCount]['vpn_id']; ?></p>
+                            <p><b>Country:</b> <?php echo @$rows[$rowArrayCount]['vpn_country']; ?></p>
+                            <p><b>City:</b> <?php echo @$rows[$rowArrayCount]['vpn_city']; ?></p>
+                            <p><b>IP Address:</b> <?php echo @$rows[$rowArrayCount]['vpn_ip_address']; ?></p>
+                            <p><b>IP Route:</b> <?php echo @$rows[$rowArrayCount]['vpn_ip_route']; ?></p>
+                            <p><b>ISP:</b> <?php echo @$rows[$rowArrayCount]['vpn_isp']; ?></p>
+                            <p><b>Created:</b> <?php echo @$rows[$rowArrayCount]['created_at']; ?></p>
                             <div class="d-flex justify-content-center" id="vpn-rocket" style="width: 320; height: 240px;">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <h3><b><?php echo $rows[$rowArrayCount]['vpn_country']; ?> - <?php echo $rows[$rowArrayCount]['vpn_city']; ?></b></h3>
+                                <h3><b><?php echo @$rows[$rowArrayCount]['vpn_country']; ?> - <?php echo @$rows[$rowArrayCount]['vpn_city']; ?></b></h3>
                             </div>
                             <div class="d-flex justify-content-center" id="vpn-connect">
                                 <video width="80" height="80" onclick="vpnConnectOn()" style="cursor:pointer;" autoplay loop muted>
@@ -97,6 +97,29 @@ include('../view/head.php');
             </div>
         </div>
     </div>
+    <!-- Button trigger modal -->
+
 </body>
 
 </html>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
