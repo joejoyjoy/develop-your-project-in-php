@@ -51,7 +51,7 @@ include('../view/head.php');
                         }
                     }
                 }
-                ?>
+                ?><br><br>
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="">Country</label>
