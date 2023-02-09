@@ -39,14 +39,11 @@ include('../view/head.php');
                             $update = $model->update($data);
 
                             if ($update) {
-                                echo "<script>alert('Record updated successfully!');</script>";
                                 echo "<script>window.location.href = '../view/admin.php';</script>";
                             } else {
-                                echo "<script>alert('Record update failed!');</script>";
                                 echo "<script>window.location.href = '../view/admin.php';</script>";
                             }
                         } else {
-                            echo "<script>alert('empty');</script>";
                             header("Location: edit.php?vpn_id=$vpn_id");
                         }
                     }
@@ -55,23 +52,23 @@ include('../view/head.php');
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="">Country</label>
-                        <input type="text" name="vpn_country" value="<?php echo $row['vpn_country']; ?>" class="form-control">
+                        <input type="text" name="vpn_country" value="<?php echo $row['vpn_country']; ?>" class="form-control" maxlength="15">
                     </div>
                     <div class="form-group">
                         <label for="">City</label>
-                        <input type="text" name="vpn_city" value="<?php echo $row['vpn_city']; ?>" class="form-control">
+                        <input type="text" name="vpn_city" value="<?php echo $row['vpn_city']; ?>" class="form-control" maxlength="15">
                     </div>
                     <div class="form-group">
                         <label for="">IP Address</label>
-                        <input type="text" name="vpn_ip_address" value="<?php echo $row['vpn_ip_address']; ?>" class="form-control">
+                        <input type="text" name="vpn_ip_address" value="<?php echo $row['vpn_ip_address']; ?>" class="form-control" maxlength="15">
                     </div>
                     <div class="form-group">
                         <label for="">IP Route</label>
-                        <input type="text" name="vpn_ip_route" value="<?php echo $row['vpn_ip_route']; ?>" class="form-control">
+                        <input type="text" name="vpn_ip_route" value="<?php echo $row['vpn_ip_route']; ?>" class="form-control" maxlength="15">
                     </div>
                     <div class="form-group">
                         <label for="">ISP</label>
-                        <input type="text" name="vpn_isp" value="<?php echo $row['vpn_isp']; ?>" class="form-control">
+                        <input type="text" name="vpn_isp" value="<?php echo $row['vpn_isp']; ?>" class="form-control" maxlength="40">
                     </div>
                     <div class="form-group">
                         <button type="submit" name="update" class="btn btn-primary" style='background-color:#FF7538; border:#FF7538;'>Submit</button>

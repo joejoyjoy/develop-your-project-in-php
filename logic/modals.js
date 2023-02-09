@@ -10,9 +10,7 @@ modalDeleteVPN.addEventListener('show.bs.modal', event => {
     // Update the modal's content.
     const modalTitle = modalDeleteVPN.querySelector('.modal-title')
     const buttonDeleteVPN = modalDeleteVPN.querySelector('.delete-vpn-modal')
-    const modalBodyInput = modalDeleteVPN.querySelector('.modal-body input')
 
-    modalTitle.textContent = `New message to ${recipient}`
-    modalBodyInput.value = recipient
+    modalTitle.textContent = `Are you sure you want to permanently delete VPN nº ${recipient} ?`
     buttonDeleteVPN.setAttribute("href", "../crud/delete.php?vpn_id=" + recipient);
 })
