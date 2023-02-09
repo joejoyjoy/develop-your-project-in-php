@@ -22,7 +22,7 @@ include('head.php');
             <main class="col ps-md-2 pt-2">
                 <table id="table" class="table table-hover">
                     <thead>
-                        <tr>
+                        <tr style="color: #FF7538;">
                             <th>Country</th>
                             <th>City</th>
                             <th>IP Address</th>
