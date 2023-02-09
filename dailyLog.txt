@@ -1,0 +1,80 @@
+ +------------------------+
+ | Squad Hopper Daily Log |
+ +------------------------+
+
+
+
+ +----------+
+ | 01/02/23 |
+ +----------+
+- Decision of all 4 on project theme: VPN Software company S.L.
+- All 4 worked on wireframe and diagram of project theme.
+- Project Manager got chosen.
+- Project Manager create github repository "develop-your-project-in-php" and install bootstrap with npm package.
+
+
+
+ +----------+
+ | 02/02/23 |
+ +----------+
+# Succeed
+- Bootstrap icons installed
+- login system created succesfully
+- New branch created "develop"
+- Branch develop: MySQL database created with VPN's and users
+
+# In progress/started
+- Each individual stared waching similar projects to get ideas and solve certain questions
+- Encrypt and decrypt passwords from users by password_hash()
+- OOP php code
+
+
+
+ +----------+
+ | 03/02/23 |
+ +----------+
+- New branch created "feature"
+- Branch feature: Users with rules of admin or cliente by login system created.
+- New branch created "inaki"
+- Branch inaki: OOP php functions code created
+
+
+
+ +----------+
+ | 06/02/23 |
+ +----------+
+- Password hash was created successfully static
+- VPN connection animation created
+- Merge from branch "feature" and "inaki" into "develop"
+- Branch inaki: Function created to sign up
+
+
+
+
+ +----------+
+ | 07/02/23 |
+ +----------+
+- Password hash was optimized for user database
+- User sign up created
+- Admin and clientes can select VPN and connect through animation
+
+
+
+ +----------+
+ | 08/02/23 |
+ +----------+
+- Merge from branch "inaki" into "develop"
+- Sorted repositories
+- Project <head> bug fixes
+- Project icons added to system
+
+
+
+ +----------+
+ | 09/02/23 |
+ +----------+
+- VPN side information bugless
+- LogIn page css improved
+- New icons around the project
+- Notifications made with toasts
+- Delete "Are you sure" Pop Up modal
