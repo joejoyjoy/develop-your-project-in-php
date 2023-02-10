@@ -3,7 +3,14 @@ session_start();
 if (!isset($_SESSION['email'])) {
     header("Location: ../session/login.php");
 }
-
+$connection = mysqli_connect('localhost', 'root', "", 'php_vpn');
+$email = $_SESSION['email'];
+$query = "SELECT * FROM users WHERE user_email = '$email'";
+$result = mysqli_query($connection, $query);
+$rows = mysqli_fetch_array($result);
+if ($rows['user_rol'] == 2) {
+    header("Location: ../view/client.php");
+}
 include('../view/head.php');
 ?>
 
