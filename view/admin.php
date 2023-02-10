@@ -9,8 +9,6 @@ $query = "SELECT * FROM users WHERE user_email = '$email'";
 $result = mysqli_query($connection, $query);
 $rows = mysqli_fetch_array($result);
 if ($rows['user_rol'] == 2) {
-    session_start();
-    $_SESSION['email'] = $_REQUEST["email"];
     header("Location: ../view/client.php");
 }
 include('../view/head.php');

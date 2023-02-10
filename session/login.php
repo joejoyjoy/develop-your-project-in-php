@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-    header('Location: ./login.php');
+    header('Location: ../view/admin.php');
     die();
 }
 
@@ -54,7 +54,7 @@ include('../view/head.php'); ?>
                                                 <p class="p-2" style="color: #2D324E;">johnsmith@gmail.com<br>Hola123!<br>ADMIN</p>
                                                 <p class="p-2" style="color: #2D324E;">robertsmith@gmail.com<br>Hola123@<br>CLIENT</p>
                                             </div>
-                                            
+
                                         </div>
                                         <!-- END -->
                                         <!-- CREATE ACCOUNT -->
@@ -81,7 +81,7 @@ include('../view/head.php'); ?>
         </div>
     </section>
     <?php
-    if (isset($_GET['event'])) { 
+    if (isset($_GET['event'])) {
         $var = $_GET['event'] ?>
         <!-- Toast -->
         <div class="toast-container bottom-0 start-50 translate-middle-x p-3">
