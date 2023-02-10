@@ -36,7 +36,7 @@
                             <?php
                             if (isset($_GET['err']))
                                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            <strong>Incorrect credentials!</strong> Please try again.
+                                            <strong>This email address is already in use! Please try again with a new one.</strong>
                                             <a href="../view/createUser.php" type="button" class="btn-close" aria-label="Close"></a>
                                         </div>';
                             ?>
@@ -70,7 +70,7 @@
                             <br>
 
                             <div class="mb-3">
-                                <input type="submit" value="Sign in" style="background-color: #FF7538; border: #FF7538;" class="btn btn-success" name="signup" onclick="return Validate()">
+                                <input type="submit" value="Create user" style="background-color: #FF7538; border: #FF7538;" class="btn btn-success" name="signup" onclick="return Validate()">
                                 <a href="../session/login.php" class="btn btn-danger" style="background-color: #343A3F; border: #343A3F;">Cancel</a>
                             </div>
                             

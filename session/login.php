@@ -45,7 +45,7 @@ include('../view/head.php'); ?>
                                             <?php
                                             if (isset($_GET['message']))
                                                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                            <strong>User created successfully. Please login.</strong>
+                                                            <strong>User created successfully!</strong>
                                                             <a href="./login.php" type="button" class="btn-close" aria-label="Close"></a>
                                                         </div>';
                                             ?><br>
