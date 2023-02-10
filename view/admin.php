@@ -3,6 +3,16 @@ session_start();
 if (!isset($_SESSION['email'])) {
     header("Location: ../session/login.php");
 }
+$connection = mysqli_connect('localhost', 'root', "", 'php_vpn');
+$email = $_SESSION['email'];
+$query = "SELECT * FROM users WHERE user_email = '$email'";
+$result = mysqli_query($connection, $query);
+$rows = mysqli_fetch_array($result);
+if ($rows['user_rol'] == 2) {
+    session_start();
+    $_SESSION['email'] = $_REQUEST["email"];
+    header("Location: ../view/client.php");
+}
 include('../view/head.php');
 ?>
 
@@ -87,7 +97,7 @@ include('../view/head.php');
     </div>
 
     <?php
-    if (isset($_GET['event'])) { 
+    if (isset($_GET['event'])) {
         $var = $_GET['event'] ?>
         <!-- Toast -->
         <div class="toast-container bottom-0 start-50 translate-middle-x p-3">
