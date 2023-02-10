@@ -128,6 +128,11 @@ include('../view/head.php');
         </div>
     <?php } ?>
 
+    <script>
+        if (typeof window.history.pushState == 'function') {
+            window.history.pushState({}, "Hide", "admin.php");
+        }
+    </script>
 
 </body>
 

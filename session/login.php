@@ -113,6 +113,11 @@ include('../view/head.php'); ?>
             </div>
         </div>
     <?php } ?>
+    <script>
+        if (typeof window.history.pushState == 'function') {
+            window.history.pushState({}, "Hide", "login.php");
+        }
+    </script>
 </body>
 
 </html>

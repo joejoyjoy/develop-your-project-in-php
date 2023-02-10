@@ -79,6 +79,13 @@ include('head.php');
             </div>
         </div>
     </div>
+
+    <script>
+        if (typeof window.history.pushState == 'function') {
+            window.history.pushState({}, "Hide", "client.php");
+        }
+    </script>
+
 </body>
 
 </html>
