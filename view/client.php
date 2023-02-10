@@ -6,7 +6,7 @@ if (!isset($_SESSION['email'])) {
 include('head.php');
 ?>
 
-<body class="bg-light">
+<body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <a href="../session/close_session.php" class="btn btn-danger" style='background-color:#FF7538; border:#FF7538;'>Log out</a>
@@ -59,7 +59,7 @@ include('head.php');
                     </tbody>
                 </table>
             </main>
-            <div class="col-4 p-3 bg-white rounded-2">
+            <div class="col-4 p-3">
                 <div id="sidebar" class="container">
                     <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
 
