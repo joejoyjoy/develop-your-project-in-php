@@ -24,7 +24,7 @@ A VPN system that helps you connect safe and fast on the internet. Test project 
 Requirements for the software and other tools to build, test and push 
 - [XAMPP](https://www.apachefriends.org/)
 - [MySQL](https://www.mysql.com/products/workbench/)
-- [PHP MyAdmin](127.0.0.1/phpmyadmin)
+- [PHP MyAdmin](http://127.0.0.1/phpmyadmin/)
 
 ## Preview
 ![Project preview image](/assets/images/projectPreview.jpg)
