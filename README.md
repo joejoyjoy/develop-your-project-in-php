@@ -8,11 +8,11 @@ A VPN system that helps you connect safe and fast on the internet. Test project 
 - [Prerequisites](#prerequisites)
 - [Preview](#preview)
 - [Tools](#tools)
-- [Authors](#authors)
+- [Contributors](#contributors-)
 
 ## Getting Started and installing
 
-1. Clone this repository
+1. Clone this repository `https://github.com/joejoyjoy/develop-your-project-in-php`
 2. Start in the XAMPP manager MySQL Database and Apache server
 3. Open on your web browser the repository folder on your localhost
 4. Open on another tab PHP myadmin to see the repository database
@@ -22,9 +22,9 @@ A VPN system that helps you connect safe and fast on the internet. Test project 
 ## Prerequisites
 
 Requirements for the software and other tools to build, test and push 
-- [XAMPP](https://www.example.com)
-- [MySQL](https://www.example.com)
-- [PHP MyAdmin](https://www.example.com)
+- [XAMPP](https://www.apachefriends.org/)
+- [MySQL](https://www.mysql.com/products/workbench/)
+- [PHP MyAdmin](127.0.0.1/phpmyadmin)
 
 ## Preview
 ![Project preview image](/assets/images/projectPreview.jpg)
@@ -38,8 +38,67 @@ Requirements for the software and other tools to build, test and push
 - [BOOTSTRAP](https://getbootstrap.com/): Bootstrap styles by CDN links
 - JS: Programming Language
 
-## Authors
-- <a href="https://github.com/igardiet">Iñaki García</a>
-- <a href="https://github.com/joejoyjoy">Joe Alt</a>
-- <a href="https://github.com/SofiSit">Sofía Sitjar</a>
-- <a href="https://github.com/pablohgb">Pablo Herrero</a>
+## Contributors ✨
+
+Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+            <a href="https://github.com/joejoyjoy">
+                <img src="https://avatars.githubusercontent.com/u/73751755" width="100px" alt="Joe Alt"/>
+                <br />
+                <sub>
+                <b>Joe Alt</b>
+                </sub>
+            </a>
+            <br />
+            <a href="#tools-dtpf" title="code-tools-maintenance-design">💻🔧🚧🎨</a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/igardiet">
+                <img src="https://avatars.githubusercontent.com/u/115088134" width="100px" alt="Iñaki García"/>
+                <br />
+                <sub>
+                <b>Iñaki García</b>
+                </sub>
+            </a>
+            <br />
+            <a href="#tools-dtpf" title="code-tools-maintenance-design">💻🔧🚧🎨</a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/SofiSit">
+                <img src="https://avatars.githubusercontent.com/u/94472523" width="100px" alt="Sofía"/>
+                <br />
+                <sub>
+                <b>Sofía</b>
+                </sub>
+            </a>
+            <br />
+            <a href="#code-devstoni" title="code-tools-maintenance-design">💻🔧🚧🎨</a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/pablohgb">
+                <img src="https://avatars.githubusercontent.com/u/80101321" width="100px" alt="Pablo Herrero"/>
+                <br />
+                <sub>
+                <b>Pablo Herrero</b>
+                </sub>
+            </a>
+            <br />
+            <a href="#code-pablohgb" title="code-tools-maintenance-design">💻🔧🚧🎨</a>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+This project follows the [all-contributors](https://allcontributors.org) specification.
+Contributions of any kind are welcome!
+
+## License <!-- omit in toc -->
+
+This project is licensed under the MIT License
