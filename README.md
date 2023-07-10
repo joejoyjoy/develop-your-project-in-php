@@ -38,6 +38,11 @@ Requirements for the software and other tools to build, test and push
 - [BOOTSTRAP](https://getbootstrap.com/): Bootstrap styles by CDN links
 - JS: Programming Language
 
+## Deploy version
+#### Just want to see the project in action?
+Good news! There is a deployed version available for everyone.
+Go to [php-vpn-project.000webhostapp.com](https://php-vpn-project.000webhostapp.com/session/login.php) and see the project in action!
+
 ## Contributors ✨
 
 Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
